@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Sniperka.obj-3d8ed6ae2bc9a7e15f84aa1fe6c27c7e.mesh"
+
+[deps]
+
+files=[ "res://.import/Sniperka.obj-3d8ed6ae2bc9a7e15f84aa1fe6c27c7e.mesh" ]
+
+source_file="res://OBJ/Sniperka.obj"
+dest_files=[ "res://.import/Sniperka.obj-3d8ed6ae2bc9a7e15f84aa1fe6c27c7e.mesh", "res://.import/Sniperka.obj-3d8ed6ae2bc9a7e15f84aa1fe6c27c7e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

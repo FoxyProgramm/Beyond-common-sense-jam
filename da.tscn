@@ -1,0 +1,278 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/room_base.gd" type="Script" id=1]
+[ext_resource path="res://materials/doors.tres" type="Material" id=2]
+[ext_resource path="res://materials/emision_2.tres" type="Material" id=3]
+[ext_resource path="res://materials/walls.tres" type="Material" id=4]
+[ext_resource path="res://fonts/LXGWWenKaiMonoTC-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="PlaneMesh" id=5]
+size = Vector2( 6, 6 )
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 1, 4, 3 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.5, 2, 1.5 )
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="SphereMesh" id=11]
+material = ExtResource( 3 )
+radius = 0.192
+height = 1.699
+radial_segments = 4
+rings = 1
+
+[sub_resource type="Curve" id=12]
+min_value = -5.0
+max_value = 5.0
+_data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.253356, -5 ), 0.0, 0.0, 0, 0, Vector2( 1, -5 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.159396, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998322, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="SphereShape" id=14]
+radius = 4.5
+
+[sub_resource type="ProceduralSky" id=4]
+sky_top_color = Color( 0.772549, 0.713726, 0.705882, 1 )
+sky_horizon_color = Color( 0.839216, 0.960784, 0.980392, 1 )
+sky_energy = 0.49
+
+[sub_resource type="Environment" id=15]
+background_mode = 2
+background_sky = SubResource( 4 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.83
+ambient_light_sky_contribution = 0.58
+fog_sun_amount = 0.22
+fog_depth_begin = 0.0
+fog_depth_end = 27.9
+dof_blur_far_quality = 2
+glow_intensity = 3.16
+glow_bloom = 0.03
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 0.99
+adjustment_contrast = 2.21
+adjustment_saturation = 0.95
+
+[sub_resource type="DynamicFont" id=16]
+size = 52
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="room_final" type="CSGCombiner" parent="."]
+material_override = ExtResource( 4 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 1 )
+count_enemies = 4
+
+[node name="CSGBox" type="CSGBox" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+invert_faces = true
+width = 15.0
+height = 7.0
+depth = 25.0
+
+[node name="CSGTorus" type="CSGTorus" parent="room_final/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -6 )
+invert_faces = true
+inner_radius = 4.5
+outer_radius = 14.5
+smooth_faces = false
+
+[node name="CSGBox2" type="CSGBox" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 12 )
+invert_faces = true
+width = 3.0
+height = 4.0
+depth = 6.0
+
+[node name="CSGMesh" type="CSGMesh" parent="room_final"]
+transform = Transform( 1, -2.62268e-07, 8.74228e-08, 8.74227e-08, -4.37114e-08, -1, 2.62268e-07, 1, -4.37114e-08, 0, -1.00001, 15 )
+operation = 2
+mesh = SubResource( 5 )
+
+[node name="connect_out" type="Position3D" parent="room_final"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, -1, -7.5 )
+
+[node name="connect_in" type="Position3D" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="request_delete_room" type="Area" parent="room_final"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, -7.5 )
+
+[node name="door_out" type="StaticBody" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="room_final/door_out"]
+material_override = ExtResource( 2 )
+mesh = SubResource( 6 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="room_final/door_out"]
+shape = SubResource( 7 )
+
+[node name="door_in" type="StaticBody" parent="room_final"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="room_final/door_in"]
+material_override = ExtResource( 2 )
+mesh = SubResource( 6 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="room_final/door_in"]
+shape = SubResource( 7 )
+
+[node name="spawner_enemies" type="Spatial" parent="room_final"]
+
+[node name="pos" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="enemies" type="Spatial" parent="room_final"]
+
+[node name="doors" type="AnimationPlayer" parent="room_final"]
+anims/RESET = SubResource( 8 )
+anims/doors_down = SubResource( 9 )
+anims/next_door = SubResource( 10 )
+
+[node name="decor" type="Spatial" parent="room_final"]
+
+[node name="particles" type="CPUParticles" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -6 )
+visible = false
+amount = 128
+lifetime = 1.75
+speed_scale = 0.34
+mesh = SubResource( 11 )
+emission_shape = 5
+emission_ring_radius = 4.93
+emission_ring_inner_radius = 4.08
+emission_ring_height = 0.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+direction = Vector3( 0, 1, 0 )
+spread = 5.97
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 6.79
+angular_velocity = 720.0
+radial_accel_curve = SubResource( 12 )
+scale_amount_curve = SubResource( 13 )
+
+[node name="final" type="Area" parent="room_final"]
+
+[node name="CollisionShape" type="CollisionShape" parent="room_final/final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -6 )
+shape = SubResource( 14 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 15 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00434256, 0, -5.70022 )
+light_color = Color( 0.878431, 0.85098, 0.184314, 1 )
+omni_range = 13.768
+omni_attenuation = 2.54912
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.77984 )
+current = true
+fov = 80.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285, 0, 0 )
+pixel_size = 0.0226
+modulate = Color( 0.980392, 0.921569, 0.0196078, 1 )
+text = "       Beyond
+common sense"
+font = SubResource( 16 )

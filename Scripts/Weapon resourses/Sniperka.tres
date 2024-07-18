@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Classes/weapon_class.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name_weapon = "Sniperka"
+damage = 20
+damage_spread = 5
+reload_time = 0.0
+shoot_period = 1.2
+endless_ammo = false
+ammo = 20
+max_ammo = 30
+get_ammo_per_box = 5

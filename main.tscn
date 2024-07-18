@@ -1,0 +1,3168 @@
+[gd_scene load_steps=106 format=2]
+
+[ext_resource path="res://Scenes/Player_3D_FP_tscn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main.gd" type="Script" id=2]
+[ext_resource path="res://fonts/large_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/def_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/grounded_enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/die_particle.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/room_base.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/wheel_of_death.tscn" type="PackedScene" id=8]
+[ext_resource path="res://materials/emision.tres" type="Material" id=9]
+[ext_resource path="res://Scenes/box.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/fly.tscn" type="PackedScene" id=11]
+[ext_resource path="res://materials/walls.tres" type="Material" id=12]
+[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=13]
+[ext_resource path="res://fonts/LXGWWenKaiMonoTC-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://materials/doors.tres" type="Material" id=15]
+[ext_resource path="res://def_button.tres" type="Theme" id=16]
+[ext_resource path="res://Scripts/GUI.gd" type="Script" id=17]
+[ext_resource path="res://OBJ/lvls/room_base9.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://OBJ/lvls/room_base10.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://OBJ/lvls/room_base7.obj" type="ArrayMesh" id=20]
+[ext_resource path="res://OBJ/lvls/room_base6.obj" type="ArrayMesh" id=21]
+[ext_resource path="res://OBJ/lvls/room_base11.obj" type="ArrayMesh" id=22]
+[ext_resource path="res://OBJ/lvls/room_base8.obj" type="ArrayMesh" id=23]
+[ext_resource path="res://OBJ/lvls/room_base3.obj" type="ArrayMesh" id=24]
+[ext_resource path="res://OBJ/lvls/room_base4.obj" type="ArrayMesh" id=25]
+[ext_resource path="res://OBJ/lvls/room_base2.obj" type="ArrayMesh" id=26]
+[ext_resource path="res://OBJ/lvls/room_base5.obj" type="ArrayMesh" id=27]
+[ext_resource path="res://OBJ/lvls/room_base.obj" type="ArrayMesh" id=28]
+[ext_resource path="res://materials/emision_2.tres" type="Material" id=29]
+
+[sub_resource type="CubeMesh" id=11]
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.354027, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="SphereMesh" id=9]
+material = ExtResource( 9 )
+height = 3.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.156442 ), 0.0, 0.0, 0, 0, Vector2( 0.300336, 0.990798 ), 0.0, 0.0, 0, 0, Vector2( 0.770134, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1083, 237.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("credits:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "show_autor"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("credits:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.9, 1.3, 2.2, 3, 3.9, 4.7, 5.4, 6 ),
+"transitions": PoolRealArray( 1, 1.03526, 1.56917, 1.8025, 1.86607, 1.86607, 1.8025, 1, 0.757858, 1 ),
+"update": 0,
+"values": [ Vector2( -1083, 237.5 ), Vector2( 19.0001, 271.5 ), Vector2( 176, 217.5 ), Vector2( 34, 253.5 ), Vector2( 32, 217.5 ), Vector2( 30, 266.5 ), Vector2( 32, 217.5 ), Vector2( 30, 266.5 ), Vector2( 32, 217.5 ), Vector2( -1047, 182.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("credits:rect_rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 0.9, 1.3, 2.2, 3, 3.9, 4.7, 5.4, 6 ),
+"transitions": PoolRealArray( 1, 1.03526, 1.56917, 1.8025, 1.86607, 1.86607, 1.8025, 1, 0.757858, 1 ),
+"update": 0,
+"values": [ -24.8903, -24.8903, 6.80304, -3.62827, 9.10294, -6.1108, 9.10294, -6.1108, 9.10294, 24.5714 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0.447059, 0.14902, 0.14902, 1 )
+skew = Vector2( 0.245, 0 )
+border_width_left = 7
+border_width_top = 5
+border_width_bottom = 3
+border_color = Color( 0.380392, 0.0235294, 0.0235294, 0 )
+expand_margin_right = 7.0
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.176471, 0.176471, 0.176471, 1 )
+skew = Vector2( 0.245, 0 )
+
+[sub_resource type="Shader" id=28]
+code = "shader_type canvas_item;
+
+uniform float alpha = 1.0;
+uniform float inner_radius = 0.0;
+uniform float outer_radius = 1.0;
+
+void fragment() {
+	float x = abs(UV.r-.5)*2.0;
+	float y = abs(UV.g-.5)*2.0;
+	float q = 1.0-(1.0-sqrt(x*x+y*y)/outer_radius)/(1.0-inner_radius);
+	COLOR = vec4(0.2, 0, 0, q*alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = SubResource( 28 )
+shader_param/alpha = 0.713
+shader_param/inner_radius = 0.421
+shader_param/outer_radius = 1.298
+
+[sub_resource type="ShaderMaterial" id=69]
+shader = SubResource( 28 )
+shader_param/alpha = 0.637
+shader_param/inner_radius = 0.318
+shader_param/outer_radius = 1.455
+
+[sub_resource type="Animation" id=46]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.64457, 4.64457 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label2:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.6, 4.6 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label3:rect_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.6, 4.6 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Label3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Label2/Label:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Label2/Label:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1170, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Label2/Label:rect_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 25.7417 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Label3/Label:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1288, -1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Label3/Label:rect_rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 21.7729 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("leave:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 97, 775 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("leave:rect_rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 22.2272 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("again:rect_rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 27.6741 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("again:rect_position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 789, 808 ) ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "death_msg"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 2, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 2, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.64457, 4.64457 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label2:rect_scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 1.8 ),
+"transitions": PoolRealArray( 1, 2.07053, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.6, 4.6 ), Vector2( 4.6, 4.6 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label2:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 1.8 ),
+"transitions": PoolRealArray( 1, 2.07053, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label3:rect_scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.6, 3.1, 3.4 ),
+"transitions": PoolRealArray( 1, 2, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.6, 4.6 ), Vector2( 4.6, 4.6 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Label3:modulate")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.6, 3.1, 3.4 ),
+"transitions": PoolRealArray( 1, 2, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Label2/Label:rect_position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.5, 2.2, 2.5 ),
+"transitions": PoolRealArray( 1, 2.21, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1515, 0 ), Vector2( 1515, 0 ), Vector2( 392, 0 ), Vector2( 392, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Label2/Label:rect_rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.5, 2.2, 2.5 ),
+"transitions": PoolRealArray( 1, 2.21914, 1, 1 ),
+"update": 0,
+"values": [ 25.7417, 25.7417, 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Label3/Label:rect_position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 3.2, 3.8, 4.1 ),
+"transitions": PoolRealArray( 1, 2.37841, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1625.18, -1 ), Vector2( 1625.18, -1 ), Vector2( 629, 0 ), Vector2( 629, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Label3/Label:rect_rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 3.2, 3.8, 4.1 ),
+"transitions": PoolRealArray( 1, 2.37841, 1, 1 ),
+"update": 0,
+"values": [ 21.7729, 21.7729, 0.0, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("leave:rect_position")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 4.3, 4.8, 5.1 ),
+"transitions": PoolRealArray( 1, 1.93187, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 97, 775 ), Vector2( 97, 775 ), Vector2( 97, 563 ), Vector2( 97, 563 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("leave:rect_rotation")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 4.3, 4.8, 5.1 ),
+"transitions": PoolRealArray( 1, 1.93187, 1, 1 ),
+"update": 0,
+"values": [ 22.2272, 22.2272, 0.0, 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("again:rect_position")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 4.3, 4.8, 5.1 ),
+"transitions": PoolRealArray( 1, 1.93187, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 789, 808 ), Vector2( 789, 808 ), Vector2( 789, 567 ), Vector2( 789, 567 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("again:rect_rotation")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 4.3, 4.8, 5.1 ),
+"transitions": PoolRealArray( 1, 1.93187, 1, 1 ),
+"update": 0,
+"values": [ 27.6741, 27.6741, 0.0, 0.0 ]
+}
+
+[sub_resource type="ProceduralSky" id=95]
+sky_top_color = Color( 0.772549, 0.713726, 0.705882, 1 )
+sky_horizon_color = Color( 0.839216, 0.960784, 0.980392, 1 )
+sky_energy = 0.49
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 95 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.83
+ambient_light_sky_contribution = 0.58
+fog_sun_amount = 0.22
+fog_depth_begin = 0.0
+fog_depth_end = 27.9
+dof_blur_far_quality = 2
+glow_intensity = 3.16
+glow_bloom = 0.03
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 0.99
+adjustment_contrast = 2.21
+adjustment_saturation = 0.95
+
+[sub_resource type="PlaneMesh" id=87]
+size = Vector2( 6, 6 )
+
+[sub_resource type="CubeMesh" id=15]
+size = Vector3( 1, 4, 3 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 0.5, 2, 1.5 )
+
+[sub_resource type="Animation" id=88]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=89]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=90]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="SphereMesh" id=91]
+material = ExtResource( 29 )
+radius = 0.192
+height = 1.699
+radial_segments = 4
+rings = 1
+
+[sub_resource type="Curve" id=93]
+min_value = -5.0
+max_value = 5.0
+_data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.253356, -5 ), 0.0, 0.0, 0, 0, Vector2( 1, -5 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=92]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.159396, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998322, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="SphereShape" id=94]
+radius = 4.5
+
+[sub_resource type="ConcavePolygonShape" id=76]
+data = PoolVector3Array( -7.5, 4, -12.5, 7.5, 4, 12.5, 7.5, 4, -12.5, 7.5, 4, -12.5, 7.5, 1, -6, 7.5, 1, -9, -7.5, 4, -12.5, 7.5, -3, -12.5, -7.5, -3, -12.5, -7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, 4, 12.5, -7.5, -3, 12.5, -7.5, 4, -12.5, -7.5, -3, -12.5, -7.5, 4, 12.5, 7.5, 4, 12.5, -7.5, 4, -12.5, 7.5, -3, -6, 7.5, 1, -6, 7.5, -3, 12.5, 7.5, 4, 12.5, 7.5, -3, 12.5, 7.5, 1, -6, 7.5, 4, -12.5, 7.5, 4, 12.5, 7.5, 1, -6, 7.5, -3, -12.5, 7.5, 4, -12.5, 7.5, 1, -9, 7.5, -3, -9, 7.5, -3, -12.5, 7.5, 1, -9, 7.5, 4, -12.5, 7.5, -3, -12.5, -7.5, 4, -12.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -7.5, -3, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7.5, -3, 12.5, 1.5, 1, 12.5, -7.5, -3, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, 1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, -7.5, 4, -12.5, -7.5, -3, 12.5, 11, -3, -9, 7.5, 1, -9, 11, 1, -9, 7.5, 1, -6, 11, -3, -6, 11, 1, -6, -1.5, -3, 12.5, -7.5, -3, -12.5, 7.5, -3, -6, 7.5, 1, -6, 11, 1, -9, 7.5, 1, -9, 1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 15, -1.5, 1, 12.5, -1.5, -3, 15, -1.5, 1, 15, 1.5, 1, 15, 1.5, -3, 12.5, 1.5, 1, 12.5, 7.5, -3, -9, 7.5, 1, -9, 11, -3, -9, 7.5, -3, -6, 11, -3, -6, 7.5, 1, -6, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 15, 7.5, -3, 12.5, 1.5, -3, 12.5, 7.5, -3, -6, 1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, -7.5, -3, 12.5, -7.5, -3, -12.5, -1.5, -3, 12.5, 7.5, -3, -12.5, 7.5, -3, -9, -7.5, -3, -12.5, 11, -3, -9, 11, -3, -6, 7.5, -3, -9, 1.5, -3, 12.5, -1.5, -3, 12.5, 7.5, -3, -6, 11, -3, -6, 7.5, -3, -6, 7.5, -3, -9, -7.5, -3, -12.5, 7.5, -3, -9, 7.5, -3, -6, 11, 1, -6, 11, 1, -9, 7.5, 1, -6, -1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 12.5, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, 1, 12.5, 1.5, -3, 15, 1.5, -3, 12.5, 1.5, 1, 15 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 2, 2.5, 1 )
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=77]
+data = PoolVector3Array( -7.5, 4, -9.5, 7.5, 4, -20.5, -26, 4, -20.5, -1.5, -3, 12.5, -7.5, -3, -9.5, 1.5, -3, 12.5, -26, 4, -9.5, -7.5, -3, -9.5, -7.5, 4, -9.5, -26, 4, -20.5, -26, 1, -16.5, -26, 4, -9.5, -7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, 4, 12.5, 7.5, -3, -20.5, -26, 4, -20.5, 7.5, 4, -20.5, -7.5, -3, -9.5, -7.5, 4, 12.5, -7.5, 4, -9.5, 7.5, -3, -20.5, 7.5, 4, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 7.5, 4, -20.5, -7.5, 4, -9.5, -7.5, 4, 12.5, 7.5, 4, 12.5, -7.5, 4, -9.5, -26, 4, -9.5, -7.5, 4, -9.5, -26, 4, -20.5, -26, -3, -20.5, 7.5, -3, -20.5, -7.5, -3, -9.5, -26, -3, -16.5, -26, -3, -20.5, -7.5, -3, -9.5, -30.5, -3, -16.5, -26, -3, -16.5, -26, -3, -13.5, -30.5, -3, -13.5, -30.5, -3, -16.5, -26, -3, -13.5, -26, -3, -9.5, -26, -3, -13.5, -7.5, -3, -9.5, 7.5, -3, 12.5, 1.5, -3, 12.5, -7.5, -3, -9.5, 7.5, -3, -20.5, 7.5, -3, 12.5, -7.5, -3, -9.5, 1.5, -3, 15, -1.5, -3, 15, 1.5, -3, 12.5, -7.5, -3, 12.5, -7.5, -3, -9.5, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, -26, -3, -13.5, -26, -3, -16.5, -7.5, -3, -9.5, -26, -3, -9.5, -7.5, -3, -9.5, -26, 4, -9.5, -26, -3, -13.5, -26, -3, -9.5, -26, 1, -13.5, -26, -3, -16.5, -26, 1, -16.5, -26, -3, -20.5, -26, -3, -9.5, -26, 4, -9.5, -26, 1, -13.5, -26, -3, -20.5, -26, 1, -16.5, -26, 4, -20.5, -26, 1, -13.5, -26, 4, -9.5, -26, 1, -16.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -7.5, -3, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7.5, -3, 12.5, 1.5, 1, 12.5, -7.5, -3, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, 1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, 1, 12.5, -26, -3, -20.5, -26, 4, -20.5, 7.5, -3, -20.5, -7.5, -3, 12.5, -7.5, 4, 12.5, -7.5, -3, -9.5, 7.5, 4, -20.5, 7.5, 4, 12.5, 7.5, -3, -20.5, 1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 15, 1.5, 1, 12.5, 1.5, -3, 15, 1.5, -3, 12.5, -26, 1, -16.5, -30.5, -3, -16.5, -30.5, 1, -16.5, -26, 1, -16.5, -30.5, 1, -13.5, -26, 1, -13.5, -1.5, 1, 12.5, -1.5, -3, 15, -1.5, 1, 15, -30.5, 1, -13.5, -26, -3, -13.5, -26, 1, -13.5, -1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 12.5, 1.5, 1, 15, 1.5, -3, 15, 1.5, 1, 12.5, -26, -3, -16.5, -30.5, -3, -16.5, -26, 1, -16.5, -30.5, 1, -16.5, -30.5, 1, -13.5, -26, 1, -16.5, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, 1, 12.5, -30.5, -3, -13.5, -26, -3, -13.5, -30.5, 1, -13.5 )
+
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=78]
+data = PoolVector3Array( 7, -3, -9.5, 7, -9.5, -9.5, 7, -2.5, -18.5, -7, 4, 12.5, -1.5, 1, 12.5, 7, 4, 12.5, 1.5, -3, 12.5, -1.5, -3, 12.5, 7, -3, -9.5, -7, -3, -9.5, 7, -9.5, -9.5, 7, -3, -9.5, 7, -2.5, -28.5, -7, -2.5, -18.5, 7, -2.5, -18.5, -7, 4, -18.5, 7, -2.5, -18.5, -7, -2.5, -18.5, 7, -2.5, -28.5, 1.5, -5.5, -28.5, -7, -2.5, -28.5, -7, -9.5, -28.5, -7, -9.5, -9.5, -7, -2.5, -18.5, -7, 4, -18.5, 7, 4, 12.5, 7, 4, -18.5, 7, 4, 12.5, 7, -3, 12.5, 7, -3, -9.5, 7, 4, -18.5, 7, 4, 12.5, 7, -3, -9.5, 7, -2.5, -28.5, 7, -2.5, -18.5, 7, -9.5, -28.5, 7, -2.5, -18.5, 7, 4, -18.5, 7, -3, -9.5, 7, -9.5, -9.5, 7, -9.5, -28.5, 7, -2.5, -18.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -7, -3, 12.5, 7, -3, 12.5, 7, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7, -3, 12.5, 1.5, 1, 12.5, -7, -3, 12.5, -1.5, 1, 12.5, -7, 4, 12.5, 1.5, 1, 12.5, 7, 4, 12.5, -1.5, 1, 12.5, -7, -3, -9.5, 7, -3, -9.5, -1.5, -3, 12.5, -7, -3, 12.5, -7, -3, -9.5, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 15, 7, -3, 12.5, 1.5, -3, 12.5, 7, -3, -9.5, 1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, -7, -9.5, -9.5, 7, -9.5, -9.5, -7, -3, -9.5, -7, -2.5, -28.5, -7, -2.5, -18.5, 7, -2.5, -28.5, 7, 4, -18.5, 7, -2.5, -18.5, -7, 4, -18.5, -1.5, -9.5, -28.5, -7, -9.5, -28.5, -1.5, -5.5, -28.5, 1.5, -9.5, -28.5, 1.5, -5.5, -28.5, 7, -9.5, -28.5, -7, -9.5, -28.5, -7, -2.5, -28.5, -1.5, -5.5, -28.5, 7, -9.5, -28.5, 1.5, -5.5, -28.5, 7, -2.5, -28.5, -1.5, -5.5, -28.5, -7, -2.5, -28.5, 1.5, -5.5, -28.5, -7, -2.5, -28.5, -7, -9.5, -28.5, -7, -2.5, -18.5, -7, 4, -18.5, -7, -2.5, -18.5, -7, -3, -9.5, -7, 4, 12.5, -7, 4, -18.5, -7, -3, -9.5, -7, -3, 12.5, -7, 4, 12.5, -7, -3, -9.5, -7, -9.5, -9.5, -7, -3, -9.5, -7, -2.5, -18.5, -7, 4, 12.5, 7, 4, 12.5, -7, 4, -18.5, 1.5, 1, 15, 1.5, -3, 12.5, 1.5, 1, 12.5, -7, -9.5, -9.5, -1.5, -9.5, -28.5, 1.5, -9.5, -28.5, 1.5, -5.5, -32.5, -1.5, -5.5, -28.5, 1.5, -5.5, -28.5, 1.5, -5.5, -28.5, 1.5, -9.5, -32.5, 1.5, -5.5, -32.5, -1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 12.5, -1.5, 1, 12.5, -1.5, -3, 15, -1.5, 1, 15, -1.5, -5.5, -28.5, -1.5, -9.5, -32.5, -1.5, -9.5, -28.5, 1.5, -3, 15, 1.5, -3, 12.5, 1.5, 1, 15, -7, -9.5, -28.5, -1.5, -9.5, -28.5, -7, -9.5, -9.5, 7, -9.5, -9.5, -7, -9.5, -9.5, 1.5, -9.5, -28.5, 7, -9.5, -28.5, 7, -9.5, -9.5, 1.5, -9.5, -28.5, 1.5, -9.5, -32.5, 1.5, -9.5, -28.5, -1.5, -9.5, -32.5, -1.5, -9.5, -32.5, 1.5, -9.5, -28.5, -1.5, -9.5, -28.5, -1.5, -5.5, -32.5, -1.5, -5.5, -28.5, 1.5, -5.5, -32.5, 1.5, -9.5, -28.5, 1.5, -9.5, -32.5, 1.5, -5.5, -28.5, 1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 15, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, 1, 12.5, -1.5, -5.5, -32.5, -1.5, -9.5, -32.5, -1.5, -5.5, -28.5 )
+
+[sub_resource type="Animation" id=48]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=79]
+data = PoolVector3Array( -21.5, -3, -23.5, -9.5, 4, -23.5, -9.5, -3, -23.5, -7.5, 4, 12.5, -7.5, -3, -4.7321, -7.5, -3, 12.5, -1.5925, -3, -12.5, -3.8046, 4, -16.3314, -1.5925, 4, -12.5, -9.5, 4, -10.5716, -9.5771, 4, -10.5, -7.5, 4, -4.7321, -9.5, 4, -13.3146, -10.0007, 4, -13.4953, -9.5, 4, -13.2964, -9.5, 4, -13.2964, -10.0007, 4, -13.4953, -9.5, 4, -13.2815, -10.3931, -3, -9.743, -7.5, 4, -4.7321, -10.3931, 4, -9.743, -11.049, -3, -10.5, -13.0514, -3, -14.3473, -10.8301, -3, -10.5, -11.4853, -3, -10.5, -16.9246, -3, -15.9393, -13.1203, -3, -14.422, -10.5607, -3, -9.5754, -10.8301, -3, -10.5, -10.3931, -3, -9.743, -3.8046, 4, -16.3314, -2.0754, -3, -18.0607, -2.0754, 4, -18.0607, -8.4393, -3, -24.4246, -9.5, 4, -23.364, -8.4393, 4, -24.4246, -10.5607, 4, -9.5754, -10.3931, -3, -9.743, -10.3931, 4, -9.743, -2.0754, 4, -18.0607, -8.4393, -3, -24.4246, -8.4393, 4, -24.4246, -9.636, 4, -10.5, -9.5, 4, -10.5716, -9.5, 4, -10.636, -9.5, 4, -23.364, -21.5, 4, -23.5, -9.995, 4, -13.5349, -21.5, 4, -23.5, -21.5, 1, -18.5, -21.5, 4, -10.5, -10.0007, 4, -13.4953, -9.5, 4, -13.3296, -9.995, 4, -13.5349, 7.5, -3, -12.5, -1.5925, 4, -12.5, 7.5, 4, -12.5, -9.5, 4, -23.5, -9.5, -3, -23.364, -9.5, -3, -23.5, 7.5, -3, -12.5, 7.5, 4, 12.5, 7.5, -3, 12.5, -10.5607, -3, -9.5754, -11.4853, 4, -10.5, -11.4853, -3, -10.5, -7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, 4, 12.5, -21.5, 4, -10.5, -11.4853, -3, -10.5, -11.4853, 4, -10.5, -21.5, 4, -23.5, -9.5, 4, -23.5, -21.5, -3, -23.5, -7.5, 4, -4.7321, -7.5, -3, -4.7321, -7.5, 4, 12.5, -3.8046, -3, -16.3314, -3.8046, 4, -16.3314, -1.5925, -3, -12.5, 7.5, 4, -12.5, -1.5925, 4, -12.5, -7.5, 4, -4.7321, 7.5, 4, 12.5, 7.5, 4, -12.5, -7.5, 4, -4.7321, -7.5, 4, 12.5, 7.5, 4, 12.5, -7.5, 4, -4.7321, -10.5607, 4, -9.5754, -10.3931, 4, -9.743, -11.049, 4, -10.5, -11.4853, 4, -10.5, -10.5607, 4, -9.5754, -11.049, 4, -10.5, -10.3931, 4, -9.743, -7.5, 4, -4.7321, -9.5771, 4, -10.5, -10.3931, 4, -9.743, -9.5771, 4, -10.5, -9.636, 4, -10.5, -1.5925, 4, -12.5, -3.8046, 4, -16.3314, -7.5962, 4, -12.5399, -1.5925, 4, -12.5, -7.5962, 4, -12.5399, -7.6464, 4, -12.4897, -2.0754, 4, -18.0607, -8.4393, 4, -24.4246, -3.8046, 4, -16.3314, -9.995, 4, -13.5349, -9.5, 4, -13.3146, -3.8046, 4, -16.3314, -8.4393, 4, -24.4246, -9.995, 4, -13.5349, -3.8046, 4, -16.3314, -7.6464, 4, -12.4897, -9.5, 4, -10.5716, -7.5, 4, -4.7321, -7.6464, 4, -12.4897, -7.5, 4, -4.7321, -1.5925, 4, -12.5, -9.5, 4, -13.3146, -7.5962, 4, -12.5399, -3.8046, 4, -16.3314, -11.049, 4, -10.5, -10.3931, 4, -9.743, -9.636, 4, -10.5, -9.5, 4, -10.636, -11.049, 4, -10.5, -9.636, 4, -10.5, -9.995, 4, -13.5349, -10.0007, 4, -13.4953, -9.5, 4, -13.3146, -7.5, -3, -4.7321, -7.5, 4, -4.7321, -10.3931, -3, -9.743, -13.1203, -3, -14.422, -13.0514, -3, -14.3473, -11.049, -3, -10.5, -7.5, -3, 12.5, -7.5, -3, -4.7321, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 15, 7.5, -3, 12.5, 1.5, -3, 12.5, 7.5, -3, -12.5, 1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, -10.3931, -3, -9.743, -10.8301, -3, -10.5, -3.8046, -3, -16.3314, -7.5, -3, -4.7321, -10.3931, -3, -9.743, -1.5925, -3, -12.5, -1.5, -3, 12.5, -7.5, -3, -4.7321, 1.5, -3, 12.5, 7.5, -3, -12.5, 1.5, -3, 12.5, -7.5, -3, -4.7321, -1.5925, -3, -12.5, 7.5, -3, -12.5, -7.5, -3, -4.7321, -2.0754, -3, -18.0607, -3.8046, -3, -16.3314, -9.5, -3, -18.2391, -8.4393, -3, -24.4246, -2.0754, -3, -18.0607, -9.5, -3, -18.2391, -3.8046, -3, -16.3314, -1.5925, -3, -12.5, -10.3931, -3, -9.743, -10.8301, -3, -10.5, -13.0514, -3, -14.3473, -9.5, -3, -18.2391, -9.5, -3, -23.364, -8.4393, -3, -24.4246, -9.5, -3, -18.2391, -3.8046, -3, -16.3314, -10.8301, -3, -10.5, -9.5, -3, -18.2391, -11.049, -3, -10.5, -10.5607, -3, -9.5754, -11.4853, -3, -10.5, -13.1203, -3, -14.422, -11.049, -3, -10.5, -11.4853, -3, -10.5, -13.0514, -3, -14.3473, -13.1203, -3, -14.422, -9.5, -3, -18.2391, -16.9246, -3, -15.9393, -9.5, -3, -18.2391, -13.1203, -3, -14.422, -11.049, -3, -10.5, -10.8301, -3, -10.5, -10.5607, -3, -9.5754, -3.8046, -3, -16.3314, -2.0754, -3, -18.0607, -3.8046, 4, -16.3314, -9.5, -3, -23.364, -9.5, 4, -23.364, -8.4393, -3, -24.4246, -10.5607, -3, -9.5754, -10.3931, -3, -9.743, -10.5607, 4, -9.5754, -2.0754, -3, -18.0607, -8.4393, -3, -24.4246, -2.0754, 4, -18.0607, -9.5771, 4, -10.5, -9.5, 4, -10.5716, -9.636, 4, -10.5, -11.049, 4, -10.5, -9.5, 4, -10.636, -9.995, 4, -13.5349, -11.4853, 4, -10.5, -11.049, 4, -10.5, -9.995, 4, -13.5349, -21.5, 4, -10.5, -11.4853, 4, -10.5, -9.995, 4, -13.5349, -21.5, 4, -23.5, -21.5, 4, -10.5, -9.995, 4, -13.5349, -9.5, 4, -23.5, -21.5, 4, -23.5, -9.5, 4, -23.364, -8.4393, 4, -24.4246, -9.5, 4, -23.364, -9.995, 4, -13.5349, -9.5, 4, -13.3146, -9.995, 4, -13.5349, -9.5, 4, -10.636, -7.6464, 4, -12.4897, -9.5, 4, -13.3146, -9.5, 4, -10.636, -9.5, 4, -10.5716, -7.6464, 4, -12.4897, -9.5, 4, -10.636, -21.5, -3, -18.5, -21.5, 1, -18.5, -21.5, -3, -23.5, -21.5, -3, -10.5, -21.5, 4, -10.5, -21.5, 1, -15.5, -21.5, -3, -15.5, -21.5, -3, -10.5, -21.5, 1, -15.5, -21.5, -3, -23.5, -21.5, 1, -18.5, -21.5, 4, -23.5, -21.5, 1, -15.5, -21.5, 4, -10.5, -21.5, 1, -18.5, -9.5, 4, -13.2964, -9.5, 4, -13.3296, -10.0007, 4, -13.4953, -1.5925, -3, -12.5, -1.5925, 4, -12.5, 7.5, -3, -12.5, -9.5, 4, -23.364, -9.5, -3, -23.364, -9.5, 4, -23.5, 7.5, 4, -12.5, 7.5, 4, 12.5, 7.5, -3, -12.5, -10.5607, 4, -9.5754, -11.4853, 4, -10.5, -10.5607, -3, -9.5754, -1.5, -3, 12.5, -1.5, 1, 12.5, -7.5, -3, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7.5, -3, 12.5, 1.5, 1, 12.5, -7.5, -3, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, 1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, 1, 12.5, -21.5, -3, -10.5, -11.4853, -3, -10.5, -21.5, 4, -10.5, -25.5, 1, -18.5, -21.5, 1, -15.5, -21.5, 1, -18.5, -21.5, -3, -15.5, -21.5, -3, -18.5, -16.9246, -3, -15.9393, -21.5, 1, -18.5, -25.5, -3, -18.5, -25.5, 1, -18.5, 1.5, -3, 15, 1.5, 1, 12.5, 1.5, 1, 15, -1.5, -3, 12.5, -1.5, 1, 15, -1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 12.5, -21.5, -3, -15.5, -25.5, 1, -15.5, -25.5, -3, -15.5, -25.5, 1, -15.5, -21.5, 1, -15.5, -25.5, 1, -18.5, -25.5, -3, -18.5, -21.5, -3, -18.5, -25.5, -3, -15.5, -21.5, -3, -10.5, -21.5, -3, -15.5, -16.9246, -3, -15.9393, -11.4853, -3, -10.5, -21.5, -3, -10.5, -16.9246, -3, -15.9393, -25.5, -3, -15.5, -21.5, -3, -18.5, -21.5, -3, -15.5, -21.5, -3, -23.5, -9.5, -3, -23.5, -9.5, -3, -23.364, -21.5, -3, -18.5, -21.5, -3, -23.5, -16.9246, -3, -15.9393, -21.5, -3, -23.5, -9.5, -3, -23.364, -16.9246, -3, -15.9393, -9.5, -3, -18.2391, -16.9246, -3, -15.9393, -9.5, -3, -23.364, -21.5, -3, -18.5, -25.5, -3, -18.5, -21.5, 1, -18.5, 1.5, -3, 12.5, 1.5, 1, 12.5, 1.5, -3, 15, -1.5, -3, 15, -1.5, 1, 15, -1.5, -3, 12.5, 1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 15, -21.5, 1, -15.5, -25.5, 1, -15.5, -21.5, -3, -15.5 )
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=80]
+data = PoolVector3Array( -9.5, 10, -19.5, 9.5, 10, 12.5, 9.5, 10, -19.5, -1.5, 1, 12.5, 1.5, 1, 12.5, 9.5, 10, 12.5, -9.5, 10, -19.5, -5, 1, -19.5, -8, 1, -19.5, -9.5, 10, -19.5, -9.5, 1, -12, -9.5, 2.5, -10, 9.5, 10, 12.5, 9.5, -1, 5.5, 9.5, 1, 3.5, -9.5, 10, 12.5, 9.5, 10, 12.5, -9.5, 10, -19.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -9.5, -3, 12.5, -9.5, 10, 12.5, -9.5, -3, 12.5, -1.5, 1, 12.5, 9.5, 10, 12.5, -9.5, 10, 12.5, -1.5, 1, 12.5, 9.5, -3, 12.5, 9.5, 10, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 9.5, -3, 12.5, 1.5, 1, 12.5, -5, -3, -19.5, -5, 1, -19.5, 9.5, -3, -19.5, 9.5, 10, -19.5, 9.5, -3, -19.5, -5, 1, -19.5, -9.5, 10, -19.5, 9.5, 10, -19.5, -5, 1, -19.5, -9.5, -3, -19.5, -9.5, 10, -19.5, -8, 1, -19.5, -8, -3, -19.5, -9.5, -3, -19.5, -8, 1, -19.5, -9.5, 1, -10, -9.5, 2.5, -10, -9.5, 1, -12, -9.5, -1, -12, -9.5, 1, -12, -9.5, -1, -14, -9.5, -3, -14, -9.5, -1, -14, -9.5, -3, -19.5, -9.5, 10, 12.5, -9.5, 10, -19.5, -9.5, 2.5, -6, -9.5, -3, 12.5, -9.5, 10, 12.5, -9.5, 2.5, -6, -9.5, -3, -6, -9.5, -3, 12.5, -9.5, 2.5, -6, -9.5, -3, -19.5, -9.5, -1, -14, -9.5, 10, -19.5, -9.5, -1, -14, -9.5, 1, -12, -9.5, 10, -19.5, -9.5, 2.5, -6, -9.5, 10, -19.5, -9.5, 2.5, -10, 9.5, -3, 5.5, 9.5, -1, 5.5, 9.5, -3, 12.5, 9.5, 10, -19.5, 9.5, 10, 12.5, 9.5, 2.5, -2.5, 9.5, -3, -19.5, 9.5, 10, -19.5, 9.5, 2.5, -2.5, 9.5, -3, -2.5, 9.5, -3, -19.5, 9.5, 2.5, -2.5, 9.5, 1, 1.5, 9.5, 2.5, 1.5, 9.5, 1, 3.5, 9.5, 2.5, -2.5, 9.5, 10, 12.5, 9.5, 2.5, 1.5, 9.5, -3, 12.5, 9.5, -1, 5.5, 9.5, 10, 12.5, 9.5, -1, 3.5, 9.5, 1, 3.5, 9.5, -1, 5.5, 9.5, 2.5, 1.5, 9.5, 10, 12.5, 9.5, 1, 3.5, -3, 1, -12, -9.5, 1, -10, -9.5, 1, -12, -5, 1, -23.5, -8, 1, -19.5, -5, 1, -19.5, -7, 0, -12, -7, -1, -14, -7, 0, -14, 6.541, -1, 3.5, 9.5, -1, 5.5, 6.5, -1, 5.5, 9.5, -1, 5.5, 9.5, -3, 5.5, 6.5, -1, 5.5, -3, -3, -6, -9.5, 2.5, -6, -3, 2.5, -6, -9.5, -1, -14, -9.5, -3, -14, -7, -1, -14, -1.5, -3, 15, -1.5, 1, 12.5, -1.5, -3, 12.5, -3, 0, -12, -3, -3, -6, -3, 1, -10, 2.5, 2.5, 1.5, 9.5, 2.5, -2.5, 9.5, 2.5, 1.5, 1.5, -3, 15, 1.5, 1, 12.5, 1.5, 1, 15, -5, -3, -19.5, 9.5, -3, -19.5, -3, -3, -14, -5, 1, -19.5, -5, -3, -23.5, -5, 1, -23.5, -3, 2.5, -10, -9.5, 1, -10, -3, 1, -10, -8, -3, -19.5, -8, 1, -23.5, -8, -3, -23.5, -1.5, 1, 12.5, 1.5, 1, 15, 1.5, 1, 12.5, 2.5, 2.5, 1.5, 9.5, 1, 1.5, 2.5, 1, 1.5, 2.5, 0, 5.5, 6.5, 0, 3.5, 6.5, 0, 5.5, 9.5, 1, 1.5, 2.5, 1, 3.5, 2.5, 1, 1.5, 6.5, -1, 3.5, 6.541, -1, 3.5, 6.5687, -1.0515, 3.5, -9.5, -1, -12, -7, -1, -14, -7, -1, -12, -3, 0, -14, -7, 0, -12, -7, 0, -14, 2.5, 0, 3.5, 2.5, 1, 3.5, 6.5, 0, 3.5, 6.5, 0, 5.5, 6.5, -1, 3.5, 6.5, -1, 5.5, -9.5, 2.5, -6, -3, 2.5, -10, -3, 2.5, -6, -9.5, -1, -12, -7, 0, -12, -9.5, 1, -12, 9.5, 2.5, -2.5, 2.5, -3, -2.5, 9.5, -3, -2.5, 2.5, 0, 3.5, 2.5, -3, -2.5, 2.5, 1, 1.5, -3, 1, -10, -9.5, 1, -10, -3, 1, -12, -8, 1, -23.5, -8, 1, -19.5, -5, 1, -23.5, -7, -1, -12, -7, -1, -14, -7, 0, -12, 6.541, -1, 3.5, 9.5, -1, 3.5, 9.5, -1, 5.5, 6.5, -1, 3.5, 6.541, -1, 3.5, 6.5, -1, 5.5, 6.5, 0, 5.5, 6.5, -1, 5.5, 2.5, 0, 5.5, 2.5, -3, 5.5, 2.5, 0, 5.5, 6.5, -1, 5.5, 9.5, -3, 5.5, 2.5, -3, 5.5, 6.5, -1, 5.5, -9.5, -3, -6, -9.5, 2.5, -6, -3, -3, -6, -7, 0, -14, -7, -1, -14, -3, 0, -14, -3, -3, -14, -3, 0, -14, -7, -1, -14, -9.5, -3, -14, -3, -3, -14, -7, -1, -14, -1.5, 1, 15, -1.5, 1, 12.5, -1.5, -3, 15, -3, -3, -14, -3, -3, -6, -3, 0, -12, -3, 0, -14, -3, -3, -14, -3, 0, -12, -3, 1, -12, -3, 0, -12, -3, 1, -10, -3, 2.5, -6, -3, 2.5, -10, -3, 1, -10, -3, -3, -6, -3, 2.5, -6, -3, 1, -10, 2.5, 2.5, -2.5, 9.5, 2.5, -2.5, 2.5, 2.5, 1.5, 1.5, -3, 12.5, 1.5, 1, 12.5, 1.5, -3, 15, -9.5, -3, 12.5, -9.5, -3, -6, 2.5, -3, 5.5, -1.5, -3, 12.5, -9.5, -3, 12.5, 2.5, -3, 5.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 15, 9.5, -3, 12.5, 1.5, -3, 12.5, 2.5, -3, 5.5, 9.5, -3, 5.5, 9.5, -3, 12.5, 2.5, -3, 5.5, 1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, -9.5, -3, -6, -3, -3, -6, 2.5, -3, 5.5, -9.5, -3, -14, -9.5, -3, -19.5, -8, -3, -19.5, -3, -3, -14, -9.5, -3, -14, -5, -3, -19.5, -9.5, -3, -14, -8, -3, -19.5, -5, -3, -19.5, -3, -3, -6, -3, -3, -14, 2.5, -3, -2.5, 1.5, -3, 12.5, -1.5, -3, 12.5, 2.5, -3, 5.5, 2.5, -3, 5.5, -3, -3, -6, 2.5, -3, -2.5, 9.5, -3, -2.5, 2.5, -3, -2.5, 9.5, -3, -19.5, -8, -3, -19.5, -8, -3, -23.5, -5, -3, -19.5, -5, -3, -23.5, -5, -3, -19.5, -8, -3, -23.5, 9.5, -3, -19.5, 2.5, -3, -2.5, -3, -3, -14, -5, -3, -19.5, -5, -3, -23.5, -5, 1, -19.5, -9.5, 2.5, -10, -9.5, 1, -10, -3, 2.5, -10, -8, 1, -19.5, -8, 1, -23.5, -8, -3, -19.5, -1.5, 1, 15, 1.5, 1, 15, -1.5, 1, 12.5, 9.5, 2.5, 1.5, 9.5, 1, 1.5, 2.5, 2.5, 1.5, 2.5, 0, 3.5, 6.5, 0, 3.5, 2.5, 0, 5.5, 9.5, 1, 3.5, 2.5, 1, 3.5, 9.5, 1, 1.5, -9.5, -1, -14, -7, -1, -14, -9.5, -1, -12, -3, 0, -12, -7, 0, -12, -3, 0, -14, 6.5, -1, 3.5, 6.5, 0, 3.5, 6.541, -1, 3.5, 9.5, -1, 3.5, 6.541, -1, 3.5, 6.5, 0, 3.5, 9.5, 1, 3.5, 9.5, -1, 3.5, 6.5, 0, 3.5, 2.5, 1, 3.5, 9.5, 1, 3.5, 6.5, 0, 3.5, 6.5, 0, 3.5, 6.5, -1, 3.5, 6.5, 0, 5.5, -9.5, 2.5, -10, -3, 2.5, -10, -9.5, 2.5, -6, -7, -1, -12, -7, 0, -12, -9.5, -1, -12, -3, 1, -12, -9.5, 1, -12, -7, 0, -12, -3, 0, -12, -3, 1, -12, -7, 0, -12, 2.5, 2.5, -2.5, 2.5, -3, -2.5, 9.5, 2.5, -2.5, 2.5, -3, 5.5, 2.5, -3, -2.5, 2.5, 0, 3.5, 2.5, 0, 5.5, 2.5, -3, 5.5, 2.5, 0, 3.5, 2.5, 1, 3.5, 2.5, 0, 3.5, 2.5, 1, 1.5, 2.5, 2.5, -2.5, 2.5, 2.5, 1.5, 2.5, 1, 1.5, 2.5, -3, -2.5, 2.5, 2.5, -2.5, 2.5, 1, 1.5 )
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=81]
+data = PoolVector3Array( 10.5, -3, -14.8281, 6.8519, -3, -11, 6.7879, -3, -11, -11.5, 6, 6, -16, 6, 12.5, -7.5, 6, 6, 16, 6, 12.5, -1.5, 1, 12.5, 1.5, 1, 12.5, -16, -3, 12.5, -16, 6, -20.5, -16, -3, -20.5, -16, 6, -20.5, 1.5, 1, -20.5, -1.5, 1, -20.5, -11.5, 6, 6, -7.5, -3, 6, -11.5, -3, 6, -7.5, 6, 2, -11.5, -3, 2, -7.5, -3, 2, 10.5, -3, -11, 10.5, 6, -11, 10.5, -3, -14.7885, -16, -3, -20.5, -11.5, -3, 2, -16, -3, 12.5, 10.5, -3, -15, 16, -3, -20.5, 10.5, -3, -14.8281, -11.5, -3, 6, -11.5, 6, 2, -11.5, 6, 6, 2.9091, -3, -7, 3, 6, -7, -3, 6, -7, -16, 6, -20.5, -3, 6, -7, 6.5, 6, -15, 10.5, -3, -11, 6.8519, -3, -11, 10.5, 6, -11, 6.5, -3, -15, 6.5, 6, -11, 6.5, -3, -11, -7.5, -3, 6, -7.5, 6, 6, -7.5, -3, 3.7344, -3, 6, -1, -3, -3, -7, -3, 6, -7, 16, -3, -20.5, 16, 6, 12.5, 16, -3, 12.5, 6.7879, -3, -11, 2.9091, -3, -7, 6.5, -3, -11, 3, 6, -7, 3, -3, -1, 3, 6, -1, 10.5, 6, -15, 6.5, -3, -15, 10.5, -3, -15, -2.9091, -3, -1, -3, 6, -1, 3, 6, -1, 10.5, -3, -14.7885, 6.8519, -3, -11, 10.5, -3, -14.8281, 3, 6, -7, 3, 6, -1, 10.5, 6, -11, 6.5, 6, -11, 3, 6, -7, 10.5, 6, -11, 10.5, 6, -15, 10.5, 6, -11, 16, 6, -20.5, -3, 6, -1, -7.5, 6, 2, -7.5, 6, 6, 3, 6, -1, -3, 6, -1, -7.5, 6, 6, 16, 6, -20.5, 10.5, 6, -11, 16, 6, 12.5, 10.5, 6, -11, 3, 6, -1, 16, 6, 12.5, -16, 6, -20.5, -16, 6, 12.5, -11.5, 6, 2, -11.5, 6, 2, -16, 6, 12.5, -11.5, 6, 6, 16, 6, 12.5, 3, 6, -1, -7.5, 6, 6, -16, 6, 12.5, 16, 6, 12.5, -7.5, 6, 6, -1.5, -3, 12.5, -1.5, 1, 12.5, -16, -3, 12.5, -16, 6, 12.5, -16, -3, 12.5, -1.5, 1, 12.5, 16, 6, 12.5, -16, 6, 12.5, -1.5, 1, 12.5, 16, -3, 12.5, 16, 6, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 16, -3, 12.5, 1.5, 1, 12.5, -16, 6, 12.5, -16, 6, -20.5, -16, -3, 12.5, 1.5, -3, -20.5, 1.5, 1, -20.5, 16, -3, -20.5, 16, 6, -20.5, 16, -3, -20.5, 1.5, 1, -20.5, -16, 6, -20.5, 16, 6, -20.5, 1.5, 1, -20.5, -16, -3, -20.5, -16, 6, -20.5, -1.5, 1, -20.5, -1.5, -3, -20.5, -16, -3, -20.5, -1.5, 1, -20.5, -7.5, 6, 6, -7.5, -3, 6, -11.5, 6, 6, -11.5, 6, 2, -11.5, -3, 2, -7.5, 6, 2, 10.5, 6, -15, 10.5, -3, -15, 10.5, -3, -14.8281, 10.5, 6, -11, 10.5, 6, -15, 10.5, -3, -14.7885, 10.5, 6, -15, 10.5, -3, -14.8281, 10.5, -3, -14.7885, -7.5, -3, 3.7344, -7.5, -3, 2, -3, -3, -1, -2.9091, -3, -1, -7.5, -3, 3.7344, -3, -3, -1, -7.5, -3, 2, -11.5, -3, 2, -3, -3, -1, -7.5, -3, 6, -16, -3, 12.5, -11.5, -3, 6, -3, -3, -1, -11.5, -3, 2, -16, -3, -20.5, -11.5, -3, 6, -16, -3, 12.5, -11.5, -3, 2, -3, -3, -1, -16, -3, -20.5, -3, -3, -7, -3, -3, -7, -16, -3, -20.5, -1.5, -3, -20.5, 6.5, -3, -15, -3, -3, -7, -1.5, -3, -20.5, -1.5, -3, -24, 1.5, -3, -24, -1.5, -3, -20.5, 6.5, -3, -15, -1.5, -3, -20.5, 1.5, -3, -20.5, 10.5, -3, -15, 6.5, -3, -15, 1.5, -3, -20.5, 1.5, -3, -24, 1.5, -3, -20.5, -1.5, -3, -20.5, 16, -3, 12.5, 1.5, -3, 12.5, 3, -3, -1, 16, -3, -20.5, 16, -3, 12.5, 10.5, -3, -11, 1.5, -3, 15, -1.5, -3, 15, 1.5, -3, 12.5, -16, -3, 12.5, -7.5, -3, 6, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, 1.5, -3, -20.5, 16, -3, -20.5, 10.5, -3, -15, 1.5, -3, 12.5, -1.5, -3, 12.5, -2.9091, -3, -1, 10.5, -3, -11, 16, -3, 12.5, 3, -3, -1, -7.5, -3, 6, -7.5, -3, 3.7344, -2.9091, -3, -1, -1.5, -3, 12.5, -7.5, -3, 6, -2.9091, -3, -1, -2.9091, -3, -1, 3, -3, -1, 1.5, -3, 12.5, 2.9091, -3, -7, 6.8519, -3, -11, 3, -3, -7, 3, -3, -7, 6.8519, -3, -11, 10.5, -3, -11, 3, -3, -1, 3, -3, -7, 10.5, -3, -11, 10.5, -3, -14.7885, 10.5, -3, -14.8281, 16, -3, -20.5, 10.5, -3, -11, 10.5, -3, -14.7885, 16, -3, -20.5, -11.5, -3, 2, -11.5, 6, 2, -11.5, -3, 6, 2.9091, -3, -7, 3, -3, -7, 3, 6, -7, -3, -3, -7, 2.9091, -3, -7, -3, 6, -7, 3, 6, -7, 6.5, 6, -11, 6.5, 6, -15, -3, 6, -7, 3, 6, -7, 6.5, 6, -15, -3, 6, -1, -3, 6, -7, -7.5, 6, 2, -11.5, 6, 2, -7.5, 6, 2, -3, 6, -7, -16, 6, -20.5, -11.5, 6, 2, -3, 6, -7, 16, 6, -20.5, -16, 6, -20.5, 6.5, 6, -15, 10.5, 6, -15, 16, 6, -20.5, 6.5, 6, -15, 6.5, 6, -11, 10.5, 6, -11, 6.8519, -3, -11, 6.5, -3, -11, 6.5, 6, -11, 6.7879, -3, -11, 6.8519, -3, -11, 6.7879, -3, -11, 6.5, 6, -11, 6.5, 6, -15, 6.5, 6, -11, 6.5, -3, -15, -7.5, 6, 2, -7.5, -3, 2, -7.5, -3, 3.7344, -7.5, 6, 6, -7.5, 6, 2, -7.5, -3, 3.7344, -3, -3, -1, -3, -3, -7, -3, 6, -1, 16, 6, -20.5, 16, 6, 12.5, 16, -3, -20.5, -3, -3, -7, 6.5, -3, -15, 2.9091, -3, -7, 6.8519, -3, -11, 2.9091, -3, -7, 6.7879, -3, -11, 6.5, -3, -15, 6.5, -3, -11, 2.9091, -3, -7, 3, -3, -7, 3, -3, -1, 3, 6, -7, 6.5, 6, -15, 6.5, -3, -15, 10.5, 6, -15, -2.9091, -3, -1, -3, -3, -1, -3, 6, -1, 3, -3, -1, -2.9091, -3, -1, 3, 6, -1, 1.5, 1, -24, -1.5, 1, -20.5, 1.5, 1, -20.5, 1.5, 1, -24, 1.5, -3, -20.5, 1.5, -3, -24, -1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 12.5, 1.5, 1, 12.5, 1.5, -3, 15, 1.5, -3, 12.5, -1.5, 1, 12.5, -1.5, -3, 15, -1.5, 1, 15, -1.5, 1, -24, -1.5, -3, -20.5, -1.5, 1, -20.5, -1.5, 1, -24, -1.5, 1, -20.5, 1.5, 1, -24, 1.5, 1, -20.5, 1.5, -3, -20.5, 1.5, 1, -24, 1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 15, 1.5, -3, 15, 1.5, 1, 12.5, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, 1, 12.5, -1.5, -3, -24, -1.5, -3, -20.5, -1.5, 1, -24 )
+
+[sub_resource type="Animation" id=57]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=82]
+data = PoolVector3Array( 18, 4, 10.5, 12, -3, 10.5, 18, -3, 10.5, -0.5, 4, -1, 20, -3, -1, -0.5, -3, -1, 26, 4, 0.5, 26, -3, -1, 26, -3, 0.5, 20, 4, 0.5, 26, -3, 0.5, 20, -3, 0.5, -3, 4, 3, -0.5, -3, 3, -3, -3, 3, -3, -3, 12, -3, 4, 3, -3, -3, 3, 26, 4, -1, 26, 4, 0.5, 33, 4, -1, 33, -3, 12, 18, 4, 12, 18, -3, 12, 1.5, -3, 15, -1.5, -3, 12, 1.5, -3, 12, 1.5, 1, 12, -3, 4, 12, -1.5, 1, 12, 20, 4, 0.5, 20, -3, -1, 20, 4, -1, 33, 4, -1, 26, -3, -1, 26, 4, -1, 18, 4, 10.5, 18, -3, 12, 18, 4, 12, 12, -3, 12, 12, 4, 10.5, 12, 4, 12, -0.5, 4, -1, -0.5, -3, 3, -0.5, 4, 3, 33, 4, 12, 33, 1, 11, 33, 1, 8, 12, 4, 10.5, 12, -3, 10.5, 18, 4, 10.5, 20, 4, -1, 20, -3, -1, -0.5, 4, -1, 26, 4, -1, 26, -3, -1, 26, 4, 0.5, 26, 4, 0.5, 26, -3, 0.5, 20, 4, 0.5, -0.5, 4, 3, -0.5, -3, 3, -3, 4, 3, -3, 4, 12, -3, 4, 3, -3, -3, 12, -0.5, 4, -1, -0.5, 4, 3, 12, 4, 10.5, 20, 4, -1, -0.5, 4, -1, 20, 4, 0.5, 20, 4, 0.5, -0.5, 4, -1, 12, 4, 10.5, -3, 4, 3, -3, 4, 12, -0.5, 4, 3, 12, 4, 12, 12, 4, 10.5, -3, 4, 12, 18, 4, 12, 33, 4, 12, 18, 4, 10.5, -3, 4, 12, 12, 4, 10.5, -0.5, 4, 3, 33, 4, 12, 33, 4, -1, 26, 4, 0.5, 18, 4, 10.5, 33, 4, 12, 26, 4, 0.5, 12, 4, 10.5, 18, 4, 10.5, 20, 4, 0.5, 26, 4, 0.5, 20, 4, 0.5, 18, 4, 10.5, 33, 4, 12, 18, 4, 12, 33, -3, 12, 33, -3, -1, 33, -3, 8, 26, -3, 0.5, 26, -3, -1, 33, -3, -1, 26, -3, 0.5, 36.5, -3, 8, 36.5, -3, 11, 33, -3, 8, 33, -3, 12, 18, -3, 12, 33, -3, 11, 36.5, -3, 11, 33, -3, 11, 33, -3, 8, 26, -3, 0.5, 33, -3, 8, 18, -3, 10.5, 20, -3, 0.5, 26, -3, 0.5, 18, -3, 10.5, 20, -3, -1, 20, -3, 0.5, -0.5, -3, -1, -3, -3, 3, -0.5, -3, 3, -1.5, -3, 12, -3, -3, 12, -3, -3, 3, -1.5, -3, 12, -0.5, -3, -1, 20, -3, 0.5, 12, -3, 10.5, -0.5, -3, 3, -0.5, -3, -1, 12, -3, 10.5, 33, -3, 8, 33, -3, 11, 18, -3, 10.5, 18, -3, 12, 18, -3, 10.5, 33, -3, 11, 12, -3, 12, 1.5, -3, 12, 12, -3, 10.5, 18, -3, 10.5, 12, -3, 10.5, 20, -3, 0.5, -1.5, -3, 15, -1.5, -3, 12, 1.5, -3, 15, -1.5, -3, 12, -0.5, -3, 3, 1.5, -3, 12, 12, -3, 10.5, 1.5, -3, 12, -0.5, -3, 3, 12, 4, 12, -3, 4, 12, 1.5, 1, 12, 12, -3, 12, 12, 4, 12, 1.5, 1, 12, 1.5, -3, 12, 12, -3, 12, 1.5, 1, 12, -1.5, -3, 12, -1.5, 1, 12, -3, -3, 12, -3, -3, 12, -1.5, 1, 12, -3, 4, 12, 20, -3, 0.5, 20, -3, -1, 20, 4, 0.5, 33, -3, -1, 26, -3, -1, 33, 4, -1, 18, -3, 10.5, 18, -3, 12, 18, 4, 10.5, 12, -3, 10.5, 12, 4, 10.5, 12, -3, 12, -0.5, -3, -1, -0.5, -3, 3, -0.5, 4, -1, 33, -3, 11, 33, 1, 11, 33, -3, 12, 33, 4, -1, 33, 4, 12, 33, 1, 8, 33, -3, -1, 33, 4, -1, 33, 1, 8, 33, -3, 8, 33, -3, -1, 33, 1, 8, 33, -3, 12, 33, 1, 11, 33, 4, 12, -1.5, -3, 12, -1.5, 1, 15, -1.5, 1, 12, 33, 1, 8, 36.5, -3, 8, 33, -3, 8, 1.5, 1, 12, -1.5, 1, 15, 1.5, 1, 15, 33, 1, 11, 36.5, -3, 11, 36.5, 1, 11, 1.5, -3, 15, 1.5, 1, 12, 1.5, 1, 15, 33, 1, 8, 36.5, 1, 11, 36.5, 1, 8, -1.5, -3, 15, -1.5, 1, 15, -1.5, -3, 12, 36.5, 1, 8, 36.5, -3, 8, 33, 1, 8, -1.5, 1, 12, -1.5, 1, 15, 1.5, 1, 12, 33, -3, 11, 36.5, -3, 11, 33, 1, 11, 1.5, -3, 12, 1.5, 1, 12, 1.5, -3, 15, 33, 1, 11, 36.5, 1, 11, 33, 1, 8 )
+
+[sub_resource type="Animation" id=60]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=83]
+data = PoolVector3Array( -7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, 4, 12.5, -12.5, 4, -28, -12.5, -3, -12.5, -12.5, 4, -12.5, 10, -3, -28, 10, 4, -34.5, 10, 4, -28, -12.5, 4, -28, -10, -3, -28, -12.5, -3, -28, -15, 4, -12.5, -12.5, -3, -12.5, -15, -3, -12.5, -10, 4, -28, -10, -3, -34.5, -10, -3, -28, 2.5, -3, -22.5, -2.5, 4, -22.5, -2.5, -3, -22.5, 7.5, 4, 12.5, 7.5, -3, -0.5, 7.5, 4, -0.5, -10, 4, -34.5, 10, 4, -34.5, 1.5, 1, -34.5, 15, 4, -0.5, 7.5, -3, -0.5, 15, -3, -0.5, -7.5, 4, -0.5, -15, -3, -0.5, -7.5, -3, -0.5, -15, 4, -0.5, -15, -3, -12.5, -15, -3, -0.5, 2.5, -3, -12.5, 2.5, 4, -22.5, 2.5, -3, -22.5, -2.5, 4, -12.5, 2.5, -3, -12.5, -2.5, -3, -12.5, -7.5, -3, -0.5, -7.5, 4, 12.5, -7.5, 4, -0.5, 15, -3, -12.5, 15, 4, -0.5, 15, -3, -0.5, 12.5, 4, -28, 12.5, -3, -12.5, 12.5, -3, -28, -7.5, 4, -0.5, 7.5, 4, -0.5, 2.5, 4, -12.5, 12.5, 4, -28, 10, -3, -28, 10, 4, -28, -2.5, 4, -22.5, -10, 4, -28, -12.5, 4, -12.5, -2.5, -3, -22.5, -2.5, 4, -12.5, -2.5, -3, -12.5, 1.5, -3, -34.5, -2.5, -3, -22.5, -1.5, -3, -34.5, 15, 4, -12.5, 12.5, -3, -12.5, 12.5, 4, -12.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -7.5, -3, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7.5, -3, 12.5, 1.5, 1, 12.5, -7.5, -3, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, 1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, 1, 12.5, -12.5, -3, -28, -12.5, -3, -12.5, -12.5, 4, -28, 10, -3, -34.5, 10, 4, -34.5, 10, -3, -28, -10, 4, -28, -10, -3, -28, -12.5, 4, -28, -12.5, 4, -12.5, -12.5, -3, -12.5, -15, 4, -12.5, -10, 4, -34.5, -10, -3, -34.5, -10, 4, -28, 2.5, 4, -22.5, -2.5, 4, -22.5, 2.5, -3, -22.5, 7.5, -3, 12.5, 7.5, -3, -0.5, 7.5, 4, 12.5, 10, -3, -34.5, 1.5, -3, -34.5, 1.5, 1, -34.5, 10, 4, -34.5, 10, -3, -34.5, 1.5, 1, -34.5, -10, -3, -34.5, -10, 4, -34.5, -1.5, 1, -34.5, -1.5, -3, -34.5, -10, -3, -34.5, -1.5, 1, -34.5, -1.5, 1, -34.5, -10, 4, -34.5, 1.5, 1, -34.5, 7.5, 4, -0.5, 7.5, -3, -0.5, 15, 4, -0.5, -15, 4, -0.5, -15, -3, -0.5, -7.5, 4, -0.5, -15, 4, -12.5, -15, -3, -12.5, -15, 4, -0.5, 2.5, 4, -12.5, 2.5, 4, -22.5, 2.5, -3, -12.5, 2.5, 4, -12.5, 2.5, -3, -12.5, -2.5, 4, -12.5, -7.5, -3, 12.5, -7.5, 4, 12.5, -7.5, -3, -0.5, 15, 4, -12.5, 15, 4, -0.5, 15, -3, -12.5, 12.5, 4, -12.5, 12.5, -3, -12.5, 12.5, 4, -28, -10, 4, -28, -3.2292, 4, -28, -10, 4, -34.5, 10, 4, -34.5, -10, 4, -34.5, -3.2292, 4, -28, 10, 4, -28, 10, 4, -34.5, -2.5, 4, -27.3, 10, 4, -34.5, -3.2292, 4, -28, -2.5, 4, -27.3, 12.5, 4, -28, 10, 4, -28, 12.5, 4, -12.5, 15, 4, -12.5, 12.5, 4, -12.5, 15, 4, -0.5, 7.5, 4, 12.5, 7.5, 4, -0.5, -7.5, 4, 12.5, 15, 4, -0.5, 12.5, 4, -12.5, 7.5, 4, -0.5, -2.5, 4, -22.5, 2.5, 4, -22.5, -2.5, 4, -27.3, 12.5, 4, -12.5, 10, 4, -28, 2.5, 4, -22.5, 7.5, 4, -0.5, 12.5, 4, -12.5, 2.5, 4, -12.5, -7.5, 4, 12.5, 7.5, 4, -0.5, -7.5, 4, -0.5, -15, 4, -0.5, -7.5, 4, -0.5, -12.5, 4, -12.5, -15, 4, -12.5, -15, 4, -0.5, -12.5, 4, -12.5, -2.5, 4, -12.5, -12.5, 4, -12.5, -7.5, 4, -0.5, 2.5, 4, -12.5, -2.5, 4, -12.5, -7.5, 4, -0.5, -2.5, 4, -27.3, 2.5, 4, -22.5, 10, 4, -28, 2.5, 4, -22.5, 2.5, 4, -12.5, 12.5, 4, -12.5, 12.5, -3, -28, 10, -3, -28, 12.5, 4, -28, -12.5, 4, -28, -12.5, 4, -12.5, -10, 4, -28, -3.2292, 4, -28, -10, 4, -28, -2.5, 4, -22.5, -2.5, 4, -27.3, -3.2292, 4, -28, -2.5, 4, -22.5, -2.5, 4, -12.5, -2.5, 4, -22.5, -12.5, 4, -12.5, -2.5, 4, -22.5, -2.5, 4, -12.5, -2.5, -3, -22.5, -12.5, -3, -28, -10, -3, -28, -12.5, -3, -12.5, -15, -3, -12.5, -12.5, -3, -12.5, -15, -3, -0.5, -2.5, -3, -12.5, -15, -3, -0.5, -12.5, -3, -12.5, -2.5, -3, -22.5, -2.5, -3, -12.5, -12.5, -3, -12.5, 2.5, -3, -22.5, -2.5, -3, -22.5, 1.5, -3, -34.5, 10, -3, -28, 2.5, -3, -22.5, 1.5, -3, -34.5, 10, -3, -34.5, 10, -3, -28, 1.5, -3, -34.5, 1.5, -3, -38, 1.5, -3, -34.5, -1.5, -3, -34.5, -1.5, -3, -38, 1.5, -3, -38, -1.5, -3, -34.5, -10, -3, -34.5, -1.5, -3, -34.5, -10, -3, -28, -10, -3, -28, -1.5, -3, -34.5, -2.5, -3, -22.5, -12.5, -3, -12.5, -10, -3, -28, -2.5, -3, -22.5, 15, -3, -12.5, 12.5, -3, -12.5, 15, 4, -12.5, -1.5, -3, 15, -1.5, 1, 12.5, -1.5, -3, 12.5, -1.5, 1, -38, -1.5, -3, -34.5, -1.5, 1, -34.5, 1.5, -3, 12.5, 1.5, 1, 15, 1.5, -3, 15, 7.5, -3, -0.5, -7.5, -3, -0.5, 2.5, -3, -12.5, -1.5, 1, -34.5, 1.5, 1, -38, -1.5, 1, -38, 1.5, 1, -34.5, 1.5, -3, -38, 1.5, 1, -38, -1.5, 1, 12.5, 1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 15, -1.5, 1, 12.5, -1.5, -3, 15, -1.5, -3, -38, -1.5, -3, -34.5, -1.5, 1, -38, 1.5, 1, 12.5, 1.5, 1, 15, 1.5, -3, 12.5, 15, -3, -0.5, 7.5, -3, -0.5, 12.5, -3, -12.5, 15, -3, -12.5, 15, -3, -0.5, 12.5, -3, -12.5, 12.5, -3, -28, 12.5, -3, -12.5, 10, -3, -28, 7.5, -3, 12.5, 1.5, -3, 12.5, 7.5, -3, -0.5, 1.5, -3, 15, -1.5, -3, 15, 1.5, -3, 12.5, -7.5, -3, 12.5, -7.5, -3, -0.5, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, 7.5, -3, -0.5, 1.5, -3, 12.5, -1.5, -3, 12.5, 12.5, -3, -12.5, 7.5, -3, -0.5, 2.5, -3, -12.5, 7.5, -3, -0.5, -1.5, -3, 12.5, -7.5, -3, -0.5, 10, -3, -28, 12.5, -3, -12.5, 2.5, -3, -22.5, -2.5, -3, -12.5, 2.5, -3, -12.5, -7.5, -3, -0.5, -15, -3, -0.5, -2.5, -3, -12.5, -7.5, -3, -0.5, 2.5, -3, -22.5, 12.5, -3, -12.5, 2.5, -3, -12.5, 1.5, 1, -34.5, 1.5, 1, -38, -1.5, 1, -34.5, 1.5, -3, -34.5, 1.5, -3, -38, 1.5, 1, -34.5, -1.5, 1, 15, 1.5, 1, 15, -1.5, 1, 12.5 )
+
+[sub_resource type="Animation" id=63]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=84]
+data = PoolVector3Array( 5.5, 4, 12.5, 5.5, -3, 3.5, 5.5, 4, 3.5, 5.5, 4, 12.5, -5.5, 4, 12.5, -1.5, 1, 12.5, -5.5, 4, 12.5, 5.5, 4, 3.5, -5.5, 4, -7.5, 5.5, 4, 3.5, 14, -3, 3.5, 14, 4, 3.5, -5.5, -3, 12.5, -5.5, 4, -7.5, -5.5, -3, -7.5, 14, -3, 3.5, 14, 4, 12.5, 14, 4, 3.5, 14, 4, 12.5, 25, 4, 12.5, 14, 4, 3.5, -5.5, 4, -7.5, 22.5, 4, -7.5, -5.5, -3, -7.5, 25, 4, 12.5, 14, -3, 12.5, 25, -3, 12.5, 14, -3, 3.5, 5.5, -3, 3.5, -5.5, -3, -7.5, 25, 4, 12.5, 25, 1, 10, 25, 1, 7, 5.5, -3, 12.5, 5.5, -3, 3.5, 5.5, 4, 12.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -5.5, -3, 12.5, 5.5, -3, 12.5, 5.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 5.5, -3, 12.5, 1.5, 1, 12.5, -5.5, -3, 12.5, -1.5, 1, 12.5, -5.5, 4, 12.5, 1.5, 1, 12.5, 5.5, 4, 12.5, -1.5, 1, 12.5, 22.5, 4, -7.5, -5.5, 4, -7.5, 5.5, 4, 3.5, 14, 4, 3.5, 22.5, 4, -7.5, 5.5, 4, 3.5, 5.5, 4, 12.5, 5.5, 4, 3.5, -5.5, 4, 12.5, 5.5, -3, 3.5, 14, -3, 3.5, 5.5, 4, 3.5, -5.5, 4, 12.5, -5.5, 4, -7.5, -5.5, -3, 12.5, 14, -3, 12.5, 14, 4, 12.5, 14, -3, 3.5, 22.5, 4, -7.5, 14, 4, 3.5, 25, 4, -7.5, 25, 4, 12.5, 25, 4, -7.5, 14, 4, 3.5, 25, -3, -7.5, -5.5, -3, -7.5, 22.5, 4, -7.5, 25, 4, -7.5, 25, -3, -7.5, 22.5, 4, -7.5, 14, 4, 12.5, 14, -3, 12.5, 25, 4, 12.5, 5.5, -3, 12.5, 1.5, -3, 12.5, 5.5, -3, 3.5, 14, -3, 12.5, 14, -3, 3.5, 25, -3, 7, 25, -3, 12.5, 14, -3, 12.5, 25, -3, 10, 25, -3, 10, 14, -3, 12.5, 25, -3, 7, 28.5, -3, 10, 25, -3, 10, 28.5, -3, 7, 25, -3, -7.5, 25, -3, 7, 14, -3, 3.5, -5.5, -3, -7.5, 25, -3, -7.5, 14, -3, 3.5, 28.5, -3, 7, 25, -3, 10, 25, -3, 7, -5.5, -3, 12.5, -5.5, -3, -7.5, 5.5, -3, 3.5, -1.5, -3, 12.5, -5.5, -3, 12.5, 5.5, -3, 3.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 15, 1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, 1.5, -3, 12.5, -1.5, -3, 12.5, 5.5, -3, 3.5, 25, -3, 10, 25, 1, 10, 25, -3, 12.5, 25, 4, -7.5, 25, 4, 12.5, 25, 1, 7, 25, -3, -7.5, 25, 4, -7.5, 25, 1, 7, 25, -3, 7, 25, -3, -7.5, 25, 1, 7, 25, -3, 12.5, 25, 1, 10, 25, 4, 12.5, 25, 1, 7, 28.5, -3, 7, 25, -3, 7, 25, 1, 7, 28.5, 1, 10, 28.5, 1, 7, -1.5, -3, 15, -1.5, 1, 12.5, -1.5, -3, 12.5, 1.5, -3, 15, 1.5, 1, 12.5, 1.5, 1, 15, -1.5, 1, 12.5, 1.5, 1, 15, 1.5, 1, 12.5, 28.5, -3, 10, 25, 1, 10, 25, -3, 10, 28.5, 1, 7, 28.5, -3, 7, 25, 1, 7, 25, 1, 10, 28.5, 1, 10, 25, 1, 7, -1.5, 1, 15, -1.5, 1, 12.5, -1.5, -3, 15, 1.5, -3, 12.5, 1.5, 1, 12.5, 1.5, -3, 15, -1.5, 1, 15, 1.5, 1, 15, -1.5, 1, 12.5, 28.5, 1, 10, 25, 1, 10, 28.5, -3, 10 )
+
+[sub_resource type="Animation" id=66]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=85]
+data = PoolVector3Array( 7.5, -3, -36.5, 7.5, -2.989, -14.0395, 7.5, -3, 12.5, 7.5, 4, 12.5, 0, 4, 8.1648, -7.5, 4, 12.5, -7.5, 4, -36.5, 0, 4, -18.2945, 7.5, 4, -36.5, -7.5, -2.989, 3.9098, -7.5, -2.989, -14.0395, -7.5, -3, 12.5, -7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, -3, 12.5, -1, -3, -36.5, 1.5, -3, 12.5, -5.7494, 4, -5.0648, 0, 4, 0.6845, 0, 4, -10.8142, 2, 1, -36.5, -1, 1, -36.5, 7.5, 4, -36.5, 7.5, 4, -15.1878, 7.5, 1.5, -16.6312, 7.5, 4, -36.5, 7.5, 4, 12.5, 7.5, -3, 12.5, 7.5, 1.5, 6.5016, 7.5, 4, 5.0582, 7.5, 4, 12.5, 7.5, 1.5, 6.5016, 7.5, 4, -36.5, 7.5, 1.5, -16.6312, 7.5, -3, -36.5, 7.5, 1.5, -16.6312, 7.5, -2.989, -14.0395, 7.5, -3, -36.5, 7.5, 1.5, 6.5016, 7.5, -3, 12.5, 7.5, -2.989, 3.9098, 7.5, -2.989, -14.0395, 7.5, -2.989, 3.9098, 7.5, -3, 12.5, -7.5, 4, 5.0582, -7.5, 4, 12.5, 0, 4, 8.1648, 7.5, 4, 5.0582, 0, 4, 8.1648, 7.5, 4, 12.5, 7.5, 4, -15.1878, 7.5, 4, -36.5, 0, 4, -18.2945, -7.5, 4, -15.1878, 0, 4, -18.2945, -7.5, 4, -36.5, -7.5, 4, -15.1878, -7.5, 4, -36.5, -7.5, 1.5, -16.6312, -7.5, 1.5, -16.6312, -7.5, 4, -36.5, -7.5, -3, -36.5, -7.5, -2.989, -14.0395, -7.5, 1.5, -16.6312, -7.5, -3, -36.5, -7.5, 4, 12.5, -7.5, 4, 5.0582, -7.5, 1.5, 6.5016, -7.5, -3, 12.5, -7.5, 4, 12.5, -7.5, 1.5, 6.5016, -7.5, 1.5, 6.5016, -7.5, -2.989, 3.9098, -7.5, -3, 12.5, -7.5, -2.989, -14.0395, -7.5, -3, -36.5, -7.5, -3, 12.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -7.5, -3, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7.5, -3, 12.5, 1.5, 1, 12.5, -7.5, -3, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, 1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, -3, -36.5, 7.5, -3, 12.5, 2, -3, -36.5, 2, -3, -40, 2, -3, -36.5, -1, -3, -40, -7.5, -3, -36.5, -1, -3, -36.5, -1.5, -3, 12.5, -7.5, -3, 12.5, -7.5, -3, -36.5, -1.5, -3, 12.5, -1, -3, -40, 2, -3, -36.5, -1, -3, -36.5, 7.5, -3, 12.5, 1.5, -3, 12.5, 2, -3, -36.5, 1.5, -3, 15, -1.5, -3, 15, 1.5, -3, 12.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, 2, -3, -36.5, 1.5, -3, 12.5, -1, -3, -36.5, 4.0654, 4, -0.9994, 5.7494, 4, -5.0648, 0, 4, 0.6845, -4.0654, 4, -0.9994, 0, 4, 0.6845, -5.7494, 4, -5.0648, -4.0654, 4, -9.1302, -5.7494, 4, -5.0648, 0, 4, -10.8142, 4.0654, 4, -9.1302, 0, 4, -10.8142, 5.7494, 4, -5.0648, 0, 4, 0.6845, 5.7494, 4, -5.0648, 0, 4, -10.8142, 2, -3, -36.5, 2, 1, -36.5, 7.5, -3, -36.5, -7.5, -3, -36.5, -7.5, 4, -36.5, -1, 1, -36.5, -1, -3, -36.5, -7.5, -3, -36.5, -1, 1, -36.5, 7.5, -3, -36.5, 2, 1, -36.5, 7.5, 4, -36.5, -1, 1, -36.5, -7.5, 4, -36.5, 7.5, 4, -36.5, -10.3754, 1.5, 5.3106, -12.0812, -2.989, -5.0648, -8.5427, -2.989, 3.4779, -4.0654, 4, -0.9994, -6.8978, 5.989, -5.0648, -4.8774, 5.989, -0.1874, -1.5, -3, 15, -1.5, 1, 12.5, -1.5, -3, 12.5, 2, 1, -36.5, 2, -3, -40, 2, 1, -40, 7.5, 1.5, -16.6312, 8.5427, -2.989, -13.6076, 7.5, -2.989, -14.0395, 0, 5.989, 1.8329, -4.0654, 4, -0.9994, -4.8774, 5.989, -0.1874, -8.5427, -2.989, -13.6076, -7.5, -2.989, -14.0395, -12.0812, -2.989, -5.0648, -7.5, 4, -15.1878, -8.5427, 5.989, -13.6076, 0, 5.989, -17.1461, 14.673, 1.5, -5.0648, 8.5427, -2.989, 3.4779, 12.0812, -2.989, -5.0648, -12.0813, 5.989, -5.0648, -10.3754, 1.5, -15.4402, -14.673, 1.5, -5.0648, 0, 5.989, 1.8329, 4.0654, 4, -0.9994, 0, 4, 0.6845, 1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 15, 6.8978, 5.989, -5.0648, 4.0654, 4, -9.1302, 5.7494, 4, -5.0648, 1.5, -3, 15, 1.5, 1, 12.5, 1.5, 1, 15, -8.5427, 5.989, 3.4779, -6.8978, 5.989, -5.0648, -12.0813, 5.989, -5.0648, 2, 1, -36.5, -1, 1, -40, -1, 1, -36.5, -14.673, 1.5, -5.0648, -8.5427, -2.989, -13.6076, -12.0812, -2.989, -5.0648, 8.5427, 5.989, -13.6076, 14.673, 1.5, -5.0648, 10.3754, 1.5, -15.4402, 12.0813, 5.989, -5.0648, 10.3754, 1.5, 5.3106, 14.673, 1.5, -5.0648, 0, 5.989, 7.0164, 7.5, 4, 5.0582, 8.5427, 5.989, 3.4779, 10.3754, 1.5, 5.3106, 7.5, -2.989, 3.9098, 8.5427, -2.989, 3.4779, -10.3754, 1.5, -15.4402, -7.5, -2.989, -14.0395, -8.5427, -2.989, -13.6076, 5.7494, 4, -5.0648, 4.8774, 5.989, -0.1874, 6.8978, 5.989, -5.0648, -10.3754, 1.5, 5.3106, -7.5, 4, 5.0582, -8.5427, 5.989, 3.4779, -8.5427, 5.989, 3.4779, -14.673, 1.5, -5.0648, -10.3754, 1.5, 5.3106, -4.0654, 4, -9.1302, -6.8978, 5.989, -5.0648, -5.7494, 4, -5.0648, -1, 1, -40, -1, -3, -36.5, -1, 1, -36.5, 14.673, 1.5, -5.0648, 8.5427, -2.989, -13.6076, 10.3754, 1.5, -15.4402, 0, 5.989, -11.9626, 4.0654, 4, -9.1302, 4.8774, 5.989, -9.9423, 8.5427, 5.989, -13.6076, 4.8774, 5.989, -9.9423, 6.8978, 5.989, -5.0648, -4.8774, 5.989, -9.9423, 0, 4, -10.8142, 0, 5.989, -11.9626, 10.3754, 1.5, -15.4402, 7.5, 4, -15.1878, 8.5427, 5.989, -13.6076, 8.5427, -2.989, 3.4779, 7.5, -2.989, 3.9098, 12.0812, -2.989, -5.0648, -10.3754, 1.5, 5.3106, -7.5, -2.989, 3.9098, -7.5, 1.5, 6.5016, -14.673, 1.5, -5.0648, -12.0812, -2.989, -5.0648, -10.3754, 1.5, 5.3106, -5.7494, 4, -5.0648, -6.8978, 5.989, -5.0648, -4.0654, 4, -0.9994, -1.5, 1, 15, -1.5, 1, 12.5, -1.5, -3, 15, 2, -3, -36.5, 2, -3, -40, 2, 1, -36.5, 10.3754, 1.5, -15.4402, 8.5427, -2.989, -13.6076, 7.5, 1.5, -16.6312, 0, 4, 0.6845, -4.0654, 4, -0.9994, 0, 5.989, 1.8329, -7.5, -2.989, 3.9098, -8.5427, -2.989, 3.4779, -12.0812, -2.989, -5.0648, -7.5, -2.989, -14.0395, -7.5, -2.989, 3.9098, -12.0812, -2.989, -5.0648, -10.3754, 1.5, -15.4402, -8.5427, 5.989, -13.6076, -7.5, 4, -15.1878, -7.5, 1.5, -16.6312, -10.3754, 1.5, -15.4402, -7.5, 4, -15.1878, 0, 4, -18.2945, -7.5, 4, -15.1878, 0, 5.989, -17.1461, 10.3754, 1.5, 5.3106, 8.5427, -2.989, 3.4779, 14.673, 1.5, -5.0648, -8.5427, 5.989, -13.6076, -10.3754, 1.5, -15.4402, -12.0813, 5.989, -5.0648, 4.8774, 5.989, -0.1874, 4.0654, 4, -0.9994, 0, 5.989, 1.8329, -1.5, 1, 12.5, -1.5, 1, 15, 1.5, 1, 12.5, 4.8774, 5.989, -9.9423, 4.0654, 4, -9.1302, 6.8978, 5.989, -5.0648, 1.5, -3, 12.5, 1.5, 1, 12.5, 1.5, -3, 15, -4.8774, 5.989, -9.9423, -12.0813, 5.989, -5.0648, -6.8978, 5.989, -5.0648, -4.8774, 5.989, -0.1874, -6.8978, 5.989, -5.0648, -8.5427, 5.989, 3.4779, 2, 1, -40, -1, 1, -40, 2, 1, -36.5, -10.3754, 1.5, -15.4402, -8.5427, -2.989, -13.6076, -14.673, 1.5, -5.0648, 12.0813, 5.989, -5.0648, 14.673, 1.5, -5.0648, 8.5427, 5.989, -13.6076, 8.5427, 5.989, 3.4779, 10.3754, 1.5, 5.3106, 12.0813, 5.989, -5.0648, 0, 4, 8.1648, 7.5, 4, 5.0582, 0, 5.989, 7.0164, 10.3754, 1.5, 5.3106, 8.5427, 5.989, 3.4779, 7.5, 4, 5.0582, 7.5, 1.5, 6.5016, 10.3754, 1.5, 5.3106, 7.5, 4, 5.0582, 7.5, 1.5, 6.5016, 7.5, -2.989, 3.9098, 10.3754, 1.5, 5.3106, -7.5, 1.5, -16.6312, -7.5, -2.989, -14.0395, -10.3754, 1.5, -15.4402, 4.0654, 4, -0.9994, 4.8774, 5.989, -0.1874, 5.7494, 4, -5.0648, -7.5, 1.5, 6.5016, -7.5, 4, 5.0582, -10.3754, 1.5, 5.3106, 0, 5.989, 7.0164, -8.5427, 5.989, 3.4779, -7.5, 4, 5.0582, 0, 4, 8.1648, 0, 5.989, 7.0164, -7.5, 4, 5.0582, -12.0813, 5.989, -5.0648, -14.673, 1.5, -5.0648, -8.5427, 5.989, 3.4779, -4.8774, 5.989, -9.9423, -6.8978, 5.989, -5.0648, -4.0654, 4, -9.1302, -1, -3, -40, -1, -3, -36.5, -1, 1, -40, 12.0812, -2.989, -5.0648, 8.5427, -2.989, -13.6076, 14.673, 1.5, -5.0648, 0, 4, -10.8142, 4.0654, 4, -9.1302, 0, 5.989, -11.9626, -12.0813, 5.989, -5.0648, -4.8774, 5.989, -9.9423, -8.5427, 5.989, -13.6076, 0, 5.989, -17.1461, -8.5427, 5.989, -13.6076, 0, 5.989, -11.9626, 8.5427, 5.989, -13.6076, 0, 5.989, -17.1461, 0, 5.989, -11.9626, 12.0813, 5.989, -5.0648, 8.5427, 5.989, -13.6076, 6.8978, 5.989, -5.0648, 8.5427, 5.989, 3.4779, 12.0813, 5.989, -5.0648, 6.8978, 5.989, -5.0648, 0, 5.989, 7.0164, 8.5427, 5.989, 3.4779, 0, 5.989, 1.8329, -8.5427, 5.989, 3.4779, 0, 5.989, 7.0164, 0, 5.989, 1.8329, -4.8774, 5.989, -0.1874, -8.5427, 5.989, 3.4779, 0, 5.989, 1.8329, -4.8774, 5.989, -9.9423, 0, 5.989, -11.9626, -8.5427, 5.989, -13.6076, 0, 5.989, 1.8329, 8.5427, 5.989, 3.4779, 4.8774, 5.989, -0.1874, 4.8774, 5.989, -0.1874, 8.5427, 5.989, 3.4779, 6.8978, 5.989, -5.0648, 0, 5.989, -11.9626, 4.8774, 5.989, -9.9423, 8.5427, 5.989, -13.6076, -4.0654, 4, -9.1302, 0, 4, -10.8142, -4.8774, 5.989, -9.9423, 0, 4, -18.2945, 0, 5.989, -17.1461, 7.5, 4, -15.1878, 7.5, 1.5, -16.6312, 7.5, 4, -15.1878, 10.3754, 1.5, -15.4402, 0, 5.989, -17.1461, 8.5427, 5.989, -13.6076, 7.5, 4, -15.1878, 7.5, -2.989, -14.0395, 8.5427, -2.989, -13.6076, 12.0812, -2.989, -5.0648, 7.5, -2.989, 3.9098, 7.5, -2.989, -14.0395, 12.0812, -2.989, -5.0648, -8.5427, -2.989, 3.4779, -7.5, -2.989, 3.9098, -10.3754, 1.5, 5.3106 )
+
+[sub_resource type="Animation" id=70]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="ConcavePolygonShape" id=86]
+data = PoolVector3Array( -7.5, 4, 12.5, 1.7108, 4, -9.5, -1.7418, 4, -9.5, 7.5, -3, -12.5, 3.7087, -0.9984, -12.5, 7.5, 4, -12.5, -7.5, -3, 12.5, -7.5, 4, -12.5, -7.5, -3, -12.5, 7.5, -3, -12.5, 7.5, 4, 12.5, 7.5, -3, 12.5, -1.5, -3, 12.5, -1.7108, -3, -9.5, 1.5, -3, 12.5, -7.5, 4, -12.5, -3.7087, 1.9984, -12.5, -7.5, -3, -12.5, -7.5, 4, 12.5, -1.5, 1, 12.5, 7.5, 4, 12.5, 1.7108, 4, -12.5, 1.7108, 4, -9.5, 7.5, 4, -12.5, 7.5, 4, 12.5, 7.5, 4, -12.5, 1.7108, 4, -9.5, -7.5, 4, 12.5, 7.5, 4, 12.5, 1.7108, 4, -9.5, -7.5, 4, -12.5, -7.5, 4, 12.5, -1.7418, 4, -9.5, -1.7418, 4, -12.5, -7.5, 4, -12.5, -1.7418, 4, -9.5, 1.7418, -3, -12.5, 3.7087, -0.9984, -12.5, 7.5, -3, -12.5, 1.7108, 4, -12.5, 7.5, 4, -12.5, 3.682, 2.0629, -12.5, 3.7087, -0.9984, -12.5, 3.682, 2.0629, -12.5, 7.5, 4, -12.5, -7.5, 4, 12.5, -7.5, 4, -12.5, -7.5, -3, 12.5, 7.5, 4, -12.5, 7.5, 4, 12.5, 7.5, -3, -12.5, -1.7108, -3, -12.5, -1.7108, -3, -9.5, -7.5, -3, -12.5, -7.5, -3, 12.5, -7.5, -3, -12.5, -1.7108, -3, -9.5, -1.5, -3, 12.5, -7.5, -3, 12.5, -1.7108, -3, -9.5, -1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 15, 7.5, -3, 12.5, 1.5, -3, 12.5, 1.7418, -3, -9.5, 7.5, -3, -12.5, 7.5, -3, 12.5, 1.7418, -3, -9.5, 1.5, -3, 15, -1.5, -3, 12.5, 1.5, -3, 12.5, 1.7418, -3, -12.5, 7.5, -3, -12.5, 1.7418, -3, -9.5, -1.7108, -3, -9.5, 1.7418, -3, -9.5, 1.5, -3, 12.5, -1.7418, 4, -12.5, -3.7087, 1.9984, -12.5, -7.5, 4, -12.5, -1.7108, -3, -12.5, -7.5, -3, -12.5, -3.682, -1.0629, -12.5, -3.7087, 1.9984, -12.5, -3.682, -1.0629, -12.5, -7.5, -3, -12.5, -1.5, -3, 12.5, -1.5, 1, 12.5, -7.5, -3, 12.5, 7.5, -3, 12.5, 7.5, 4, 12.5, 1.5, 1, 12.5, 1.5, -3, 12.5, 7.5, -3, 12.5, 1.5, 1, 12.5, -7.5, -3, 12.5, -1.5, 1, 12.5, -7.5, 4, 12.5, 1.5, 1, 12.5, 7.5, 4, 12.5, -1.5, 1, 12.5, 36.7087, -0.9984, -16.5, 36.682, 2.0629, -54.5, 36.682, 2.0629, -16.5, 31.5016, -3.2087, -22.9986, 1.5629, -3.182, -19.9371, -1.4985, -3.2087, -22.9984, -3.682, -1.0629, -17.8546, -3.682, -1.0629, -12.5, -3.6826, -0.9984, -17.7913, -3.6826, -0.9984, -17.7913, -5.5, -0.9984, -17.7913, -3.682, -1.0629, -17.8546, -1.4984, -3.2087, -9.5, 1.7418, -3, -9.5, -1.7108, -3, -9.5, 1.5, 1, 12.5, 1.5, -3, 15, 1.5, -3, 12.5, 1.5256, 4.182, -23.0629, 1.9619, 3.7532, -23.4843, 1.4984, 4.2087, -26.5, 32.5, -3.2, -23.0073, 32.5, -3.2, -22.0001, 32.5, -3.2087, -22.9984, 1.5629, -3.182, -23.0256, 1.5629, -3.182, -26.5, 3.6454, -1.0629, -25.182, 3.7087, -0.9984, -26.5, -1.4984, -3.2087, -26.5, 1.4984, 4.2087, -26.5, 1.4984, 4.2087, -26.5, -1.5629, 4.182, -23.0629, 1.4984, 4.2087, -20.0016, -1.7108, -3, -12.5, -1.5256, -3.182, -19.9371, -1.4984, -3.2087, -9.5, -1.5629, 4.182, -19.9744, -3.6454, 2.0629, -17.818, -1.7418, 4, -12.5, 29.2913, 1.9984, -25.2087, 3.682, 2.0629, -25.1454, 29.2983, 2.0056, -25.2017, 1.4984, 4.2087, -20.0016, -5.5, 4.2087, -20.0016, -1.5629, 4.182, -19.9744, 29.3174, -0.9984, -17.7913, 3.7087, -0.9984, -17.7913, 29.318, -1.0629, -17.8547, 3.682, 2.0629, -17.818, 31.4371, 4.182, -19.9744, 1.4984, 4.2087, -20.0016, 29.4628, 2.173, -25.0372, 1.5256, 4.182, -23.0629, 31.4371, 4.182, -23.0629, 1.4984, 4.2087, -9.5, -1.5629, 4.182, -19.9744, -1.5629, 4.182, -9.5, -5.5, -1.0629, -25.182, -5.5, -3.182, -19.9371, -5.5, 4.182, -23.0629, 31.4371, 4.182, -16.5, 34.4984, 4.2087, -16.5, 32.5, 4.1913, -19.9838, 32.5, 4.1913, -22.0001, 32.5, 4.2087, -20.0016, 32.5, 4.1913, -19.9838, -5.5, -0.9984, -17.7913, -3.7087, 1.9984, -17.8174, -5.5, 2.0629, -17.818, 29.2913, 1.9984, -16.5, 29.3174, -0.9984, -17.7913, 29.318, -1.0629, -16.5, -1.5629, 4.182, -26.5, -3.7087, 1.9984, -25.2087, -1.5629, 4.182, -23.0629, 3.7087, -0.9984, -17.7913, 3.682, 2.0629, -12.5, 3.7087, -0.9984, -12.5, -1.5256, -3.182, -19.9371, -5.5, -3.2087, -22.9984, -1.4985, -3.2087, -22.9984, 3.682, 2.0629, -26.5, 3.6826, 1.9984, -25.2087, 3.7087, -0.9984, -26.5, 32.5, -3.2087, -22.9984, 32.3879, -3.201, -23.0063, 32.5, -3.2, -23.0073, 1.4984, 4.2087, -9.5, -1.7418, 4, -9.5, 1.7108, 4, -9.5, 1.7418, -3, -9.5, 1.5629, -3.182, -9.5, 1.7418, -3, -12.5, 31.5016, -3.2087, -22.9986, 1.5629, -3.182, -23.0256, 31.5007, -3.2079, -22.9993, 3.6826, 1.9984, -25.2087, 29.2913, 1.9984, -25.2087, 3.7087, -0.9984, -25.1826, -3.7087, 1.9984, -25.2087, -5.5, -1.0629, -25.182, -5.5, 1.9984, -25.2087, -1.4984, -3.2087, -26.5, -3.682, -1.0629, -25.182, -3.682, -1.0629, -26.5, -5.5, 4.182, -23.0629, -3.7087, 1.9984, -25.2087, -5.5, 1.9984, -25.2087, -1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 12.5, -1.5, 1, 12.5, -1.5, -3, 15, -1.5, 1, 15, 1.4984, 4.2087, -9.5, 1.7108, 4, -12.5, 1.4984, 4.2087, -20.0016, 32.5, -3.2, -22.0001, 34.5629, -3.182, -16.5, 31.5016, -3.2087, -22.9986, 31.5016, -3.2087, -16.5, 36.7087, -0.9984, -16.5, 29.2913, 1.9984, -16.5, 31.5016, -3.2087, -54.5, 34.5, -3, -54.5, 34.5629, -3.182, -54.5, 31.5, 1, -58, 32.4, 1, -54.5, 34.5, 1, -58, -3.682, -1.0629, -26.5, -3.7087, 1.9984, -25.2087, -3.7087, 1.9984, -26.5, 34.5629, -3.182, -54.5, 32.3879, -3.201, -23.0063, 31.5016, -3.2087, -54.5, 29.318, -1.0629, -25.182, 31.5016, -3.2087, -54.5, 31.5007, -3.2079, -22.9993, 29.318, -1.0629, -16.5, 29.318, -1.0629, -17.8547, 31.5016, -3.2087, -16.5, -1.4984, -3.2087, -26.5, 1.5629, -3.182, -23.0256, -1.4985, -3.2087, -22.9984, 29.2913, 1.9984, -25.2087, 29.318, -1.0629, -54.5, 29.318, -1.0629, -25.182, -5.5, -3.2087, -22.9984, -3.682, -1.0629, -25.182, -1.4985, -3.2087, -22.9984, 31.5, -0.2, -54.5, 29.318, -1.0629, -54.5, 31.5, 1, -54.5, 29.2913, 1.9984, -17.8174, 29.2913, 1.9984, -16.5, 29.3546, 2.0629, -17.818, 29.4628, 2.173, -25.0372, 31.4371, 4.182, -54.5, 29.2983, 2.0056, -25.2017, 34.5629, -3.182, -16.5, 36.7087, -0.9984, -54.5, 36.7087, -0.9984, -16.5, 34.5, -3, -54.5, 34.5, 1, -58, 34.5, 1, -54.5, 31.5, -3, -54.5, 34.5, -3, -58, 34.5, -3, -54.5, 31.5, -3, -54.5, 31.5, -0.2, -54.5, 31.5, -3, -58, 36.682, 2.0629, -16.5, 34.4984, 4.2087, -54.5, 34.4984, 4.2087, -16.5, 29.3546, 2.0629, -17.818, 3.682, 2.0629, -17.818, 29.2913, 1.9984, -17.8174, 36.7087, -0.9984, -54.5, 36.682, 2.0629, -54.5, 36.7087, -0.9984, -16.5, 31.4744, -3.182, -19.9371, 1.5629, -3.182, -19.9371, 31.5016, -3.2087, -22.9986, -1.4984, -3.2087, -9.5, -1.4985, -3.2087, -22.9984, 1.5629, -3.182, -19.9371, 1.5629, -3.182, -9.5, -1.4984, -3.2087, -9.5, 1.5629, -3.182, -19.9371, -3.7087, 1.9984, -17.8174, -3.6826, -0.9984, -17.7913, -3.7087, 1.9984, -12.5, -3.682, -1.0629, -12.5, -3.7087, 1.9984, -12.5, -3.6826, -0.9984, -17.7913, -1.5256, -3.182, -19.9371, -3.682, -1.0629, -17.8546, -5.5, -3.182, -19.9371, -5.5, -0.9984, -17.7913, -5.5, -3.182, -19.9371, -3.682, -1.0629, -17.8546, 1.5629, -3.182, -9.5, 1.7418, -3, -9.5, -1.4984, -3.2087, -9.5, 1.5, 1, 15, 1.5, -3, 15, 1.5, 1, 12.5, 1.4984, 4.2087, -20.0016, 1.5256, 4.182, -23.0629, 1.4984, 4.2087, -26.5, 3.682, 2.0629, -26.5, 1.4984, 4.2087, -26.5, 3.682, 2.0629, -25.1454, 1.9619, 3.7532, -23.4843, 3.682, 2.0629, -25.1454, 1.4984, 4.2087, -26.5, 3.7087, -0.9984, -25.1826, 3.6454, -1.0629, -25.182, 3.7087, -0.9984, -26.5, 1.5629, -3.182, -26.5, 3.7087, -0.9984, -26.5, 3.6454, -1.0629, -25.182, -3.682, -1.0629, -26.5, -3.7087, 1.9984, -26.5, -1.4984, -3.2087, -26.5, 1.5629, -3.182, -26.5, -1.4984, -3.2087, -26.5, 3.7087, -0.9984, -26.5, 3.682, 2.0629, -26.5, 3.7087, -0.9984, -26.5, 1.4984, 4.2087, -26.5, -1.5629, 4.182, -26.5, 1.4984, 4.2087, -26.5, -3.7087, 1.9984, -26.5, -1.4984, -3.2087, -26.5, -3.7087, 1.9984, -26.5, 1.4984, 4.2087, -26.5, -1.5629, 4.182, -26.5, -1.5629, 4.182, -23.0629, 1.4984, 4.2087, -26.5, -5.5, 4.2087, -20.0016, 1.4984, 4.2087, -20.0016, -1.5629, 4.182, -23.0629, -5.5, 4.182, -23.0629, -5.5, 4.2087, -20.0016, -1.5629, 4.182, -23.0629, -3.682, -1.0629, -17.8546, -1.5256, -3.182, -19.9371, -1.7108, -3, -12.5, -3.682, -1.0629, -12.5, -3.682, -1.0629, -17.8546, -1.7108, -3, -12.5, -1.7108, -3, -9.5, -1.7108, -3, -12.5, -1.4984, -3.2087, -9.5, -1.4985, -3.2087, -22.9984, -1.4984, -3.2087, -9.5, -1.5256, -3.182, -19.9371, -1.5629, 4.182, -9.5, -1.5629, 4.182, -19.9744, -1.7418, 4, -12.5, -1.7418, 4, -9.5, -1.5629, 4.182, -9.5, -1.7418, 4, -12.5, -3.7087, 1.9984, -12.5, -1.7418, 4, -12.5, -3.6454, 2.0629, -17.818, -3.7087, 1.9984, -17.8174, -3.7087, 1.9984, -12.5, -3.6454, 2.0629, -17.818, 3.6826, 1.9984, -25.2087, 3.682, 2.0629, -25.1454, 29.2913, 1.9984, -25.2087, 29.4623, 2.1724, -25.0377, 29.2983, 2.0056, -25.2017, 3.682, 2.0629, -25.1454, 1.9619, 3.7532, -23.4843, 29.4623, 2.1724, -25.0377, 3.682, 2.0629, -25.1454, -3.6454, 2.0629, -17.818, -1.5629, 4.182, -19.9744, -5.5, 4.2087, -20.0016, -5.5, 2.0629, -17.818, -3.6454, 2.0629, -17.818, -5.5, 4.2087, -20.0016, 31.4744, -3.182, -19.9371, 29.318, -1.0629, -17.8547, 1.5629, -3.182, -19.9371, 3.7087, -0.9984, -17.7913, 1.5629, -3.182, -19.9371, 29.318, -1.0629, -17.8547, 29.3546, 2.0629, -17.818, 31.4371, 4.182, -19.9744, 3.682, 2.0629, -17.818, 32.5, 4.2087, -20.0016, 1.4984, 4.2087, -20.0016, 31.4371, 4.182, -19.9744, 32.5, 4.1913, -19.9838, 32.5, 4.2087, -20.0016, 31.4371, 4.182, -19.9744, 1.9619, 3.7532, -23.4843, 1.5256, 4.182, -23.0629, 29.4628, 2.173, -25.0372, 1.4984, 4.2087, -20.0016, -1.5629, 4.182, -19.9744, 1.4984, 4.2087, -9.5, -5.5, -0.9984, -17.7913, -5.5, 2.0629, -17.818, -5.5, -3.182, -19.9371, -5.5, -3.2087, -22.9984, -5.5, -3.182, -19.9371, -5.5, -1.0629, -25.182, -5.5, 1.9984, -25.2087, -5.5, -1.0629, -25.182, -5.5, 4.182, -23.0629, -5.5, 4.2087, -20.0016, -5.5, 4.182, -23.0629, -5.5, 2.0629, -17.818, -5.5, -3.182, -19.9371, -5.5, 2.0629, -17.818, -5.5, 4.182, -23.0629, 1.4984, 4.2087, -20.0016, 32.5, 4.2087, -20.0016, 31.4371, 4.182, -23.0629, 1.5256, 4.182, -23.0629, 1.4984, 4.2087, -20.0016, 31.4371, 4.182, -23.0629, 31.4371, 4.182, -54.5, 31.4371, 4.182, -23.0629, 34.4984, 4.2087, -54.5, 31.4371, 4.182, -19.9744, 31.4371, 4.182, -16.5, 32.5, 4.1913, -19.9838, 32.5, 4.2087, -20.0016, 32.5, 4.1913, -19.9838, 34.4984, 4.2087, -16.5, 31.4371, 4.182, -23.0629, 32.5, 4.2087, -20.0016, 34.4984, 4.2087, -16.5, 34.4984, 4.2087, -54.5, 31.4371, 4.182, -23.0629, 34.4984, 4.2087, -16.5, -3.6826, -0.9984, -17.7913, -3.7087, 1.9984, -17.8174, -5.5, -0.9984, -17.7913, -3.6454, 2.0629, -17.818, -5.5, 2.0629, -17.818, -3.7087, 1.9984, -17.8174, 29.2913, 1.9984, -17.8174, 29.3174, -0.9984, -17.7913, 29.2913, 1.9984, -16.5, 29.318, -1.0629, -17.8547, 29.318, -1.0629, -16.5, 29.3174, -0.9984, -17.7913, -3.7087, 1.9984, -26.5, -3.7087, 1.9984, -25.2087, -1.5629, 4.182, -26.5, 3.682, 2.0629, -17.818, 3.682, 2.0629, -12.5, 3.7087, -0.9984, -17.7913, -5.5, -3.182, -19.9371, -5.5, -3.2087, -22.9984, -1.5256, -3.182, -19.9371, 3.7087, -0.9984, -25.1826, 3.7087, -0.9984, -26.5, 3.6826, 1.9984, -25.2087, 3.682, 2.0629, -25.1454, 3.6826, 1.9984, -25.2087, 3.682, 2.0629, -26.5, 31.5915, -3.2079, -22.9992, 32.3879, -3.201, -23.0063, 32.5, -3.2087, -22.9984, -1.5629, 4.182, -9.5, -1.7418, 4, -9.5, 1.4984, 4.2087, -9.5, 3.7087, -0.9984, -17.7913, 3.7087, -0.9984, -12.5, 1.7418, -3, -12.5, 1.5629, -3.182, -19.9371, 3.7087, -0.9984, -17.7913, 1.7418, -3, -12.5, 1.5629, -3.182, -9.5, 1.5629, -3.182, -19.9371, 1.7418, -3, -12.5, -1.4985, -3.2087, -22.9984, 1.5629, -3.182, -23.0256, 31.5016, -3.2087, -22.9986, 29.318, -1.0629, -25.182, 31.5007, -3.2079, -22.9993, 1.5629, -3.182, -23.0256, 3.6454, -1.0629, -25.182, 29.318, -1.0629, -25.182, 1.5629, -3.182, -23.0256, 29.318, -1.0629, -25.182, 3.6454, -1.0629, -25.182, 3.7087, -0.9984, -25.1826, 29.2913, 1.9984, -25.2087, 29.318, -1.0629, -25.182, 3.7087, -0.9984, -25.1826, -3.682, -1.0629, -25.182, -5.5, -1.0629, -25.182, -3.7087, 1.9984, -25.2087, -1.4985, -3.2087, -22.9984, -3.682, -1.0629, -25.182, -1.4984, -3.2087, -26.5, -1.5629, 4.182, -23.0629, -3.7087, 1.9984, -25.2087, -5.5, 4.182, -23.0629, 1.5, 1, 15, 1.5, 1, 12.5, -1.5, 1, 15, -1.5, -3, 12.5, -1.5, -3, 15, -1.5, 1, 12.5, 3.682, 2.0629, -17.818, 1.4984, 4.2087, -20.0016, 1.7108, 4, -12.5, 3.682, 2.0629, -12.5, 3.682, 2.0629, -17.818, 1.7108, 4, -12.5, 1.7108, 4, -9.5, 1.7108, 4, -12.5, 1.4984, 4.2087, -9.5, 31.9861, -3.2045, -22.5141, 31.5016, -3.2087, -22.9986, 31.5017, -3.2087, -22.9984, 31.5016, -3.2087, -16.5, 31.5017, -3.2087, -22.9984, 34.5629, -3.182, -16.5, 32.3879, -3.201, -23.0063, 34.5629, -3.182, -54.5, 32.5, -3.2, -23.0073, 32.5, -3.2087, -22.9984, 32.5, -3.2, -22.0001, 31.5016, -3.2087, -22.9986, 32.5, -3.2, -23.0073, 34.5629, -3.182, -54.5, 34.5629, -3.182, -16.5, 32.5, -3.2, -22.0001, 32.5, -3.2, -23.0073, 34.5629, -3.182, -16.5, 31.5017, -3.2087, -22.9984, 31.5016, -3.2087, -22.9986, 34.5629, -3.182, -16.5, 34.5629, -3.182, -16.5, 36.7087, -0.9984, -16.5, 31.5016, -3.2087, -16.5, 29.318, -1.0629, -16.5, 31.5016, -3.2087, -16.5, 29.2913, 1.9984, -16.5, 31.4371, 4.182, -16.5, 29.2913, 1.9984, -16.5, 34.4984, 4.2087, -16.5, 36.682, 2.0629, -16.5, 34.4984, 4.2087, -16.5, 29.2913, 1.9984, -16.5, 36.7087, -0.9984, -16.5, 36.682, 2.0629, -16.5, 29.2913, 1.9984, -16.5, 31.5, -0.2, -54.5, 31.5, -3, -54.5, 29.318, -1.0629, -54.5, 36.7087, -0.9984, -54.5, 34.5629, -3.182, -54.5, 34.5, -3, -54.5, 36.682, 2.0629, -54.5, 36.7087, -0.9984, -54.5, 34.5, 1, -54.5, 36.7087, -0.9984, -54.5, 34.5, -3, -54.5, 34.5, 1, -54.5, 34.4984, 4.2087, -54.5, 36.682, 2.0629, -54.5, 34.5, 1, -54.5, 31.4371, 4.182, -54.5, 34.4984, 4.2087, -54.5, 32.4, 1, -54.5, 34.4984, 4.2087, -54.5, 34.5, 1, -54.5, 32.4, 1, -54.5, 29.2913, 1.9984, -54.5, 31.4371, 4.182, -54.5, 32.4, 1, -54.5, 29.318, -1.0629, -54.5, 31.5, -3, -54.5, 31.5016, -3.2087, -54.5, 31.5, -3, -54.5, 34.5, -3, -54.5, 31.5016, -3.2087, -54.5, 34.5, 1, -54.5, 34.5, 1, -58, 32.4, 1, -54.5, 31.5, 1, -54.5, 32.4, 1, -54.5, 31.5, 1, -58, -3.682, -1.0629, -25.182, -3.7087, 1.9984, -25.2087, -3.682, -1.0629, -26.5, 31.5017, -3.2087, -22.9984, 31.5016, -3.2087, -54.5, 31.5915, -3.2079, -22.9992, 32.3879, -3.201, -23.0063, 31.5915, -3.2079, -22.9992, 31.5016, -3.2087, -54.5, 29.318, -1.0629, -54.5, 31.5016, -3.2087, -54.5, 29.318, -1.0629, -25.182, 31.5016, -3.2087, -22.9986, 31.5016, -3.2087, -16.5, 31.4744, -3.182, -19.9371, 29.318, -1.0629, -17.8547, 31.4744, -3.182, -19.9371, 31.5016, -3.2087, -16.5, 1.5629, -3.182, -26.5, 1.5629, -3.182, -23.0256, -1.4984, -3.2087, -26.5, 29.2913, 1.9984, -54.5, 29.318, -1.0629, -54.5, 29.2913, 1.9984, -25.2087, -5.5, -1.0629, -25.182, -3.682, -1.0629, -25.182, -5.5, -3.2087, -22.9984, 32.4, 1, -54.5, 31.5, 1, -54.5, 29.2913, 1.9984, -54.5, 29.318, -1.0629, -54.5, 29.2913, 1.9984, -54.5, 31.5, 1, -54.5, 31.4371, 4.182, -19.9744, 29.3546, 2.0629, -17.818, 31.4371, 4.182, -16.5, 29.2913, 1.9984, -16.5, 31.4371, 4.182, -16.5, 29.3546, 2.0629, -17.818, 29.2913, 1.9984, -54.5, 29.2913, 1.9984, -25.2087, 31.4371, 4.182, -54.5, 31.4371, 4.182, -23.0629, 31.4371, 4.182, -54.5, 29.4628, 2.173, -25.0372, 29.2913, 1.9984, -25.2087, 29.2983, 2.0056, -25.2017, 31.4371, 4.182, -54.5, 34.5629, -3.182, -54.5, 36.7087, -0.9984, -54.5, 34.5629, -3.182, -16.5, 34.5, -3, -58, 34.5, 1, -58, 34.5, -3, -54.5, 31.5, -3, -58, 34.5, -3, -58, 31.5, -3, -54.5, 31.5, 1, -58, 31.5, -3, -58, 31.5, -0.2, -54.5, 31.5, 1, -54.5, 31.5, 1, -58, 31.5, -0.2, -54.5, 36.682, 2.0629, -54.5, 34.4984, 4.2087, -54.5, 36.682, 2.0629, -16.5, 29.3174, -0.9984, -17.7913, 29.2913, 1.9984, -17.8174, 3.7087, -0.9984, -17.7913, 3.682, 2.0629, -17.818, 3.7087, -0.9984, -17.7913, 29.2913, 1.9984, -17.8174 )
+
+[sub_resource type="Animation" id=73]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "doors_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, 2.5, -7.5 ), Vector3( 8.5, -1, -7.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door_in:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 2.14355, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.5, 13.5 ), Vector3( 0, -1, 13.5 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "next_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("door_out:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.46729, 1 ),
+"update": 0,
+"values": [ Vector3( 8.5, -1, -7.5 ), Vector3( 8.5, 2.5, -7.5 ) ]
+}
+
+[sub_resource type="PlaneMesh" id=13]
+size = Vector2( 7.614, 7.303 )
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+
+[sub_resource type="Animation" id=20]
+resource_name = "doors_down"
+length = 0.3
+
+[sub_resource type="Animation" id=22]
+resource_name = "next_door"
+
+[sub_resource type="DynamicFont" id=47]
+size = 52
+outline_size = 4
+font_data = ExtResource( 14 )
+
+[sub_resource type="CubeMesh" id=44]
+
+[node name="main" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="ground_particle" type="CPUParticles" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource( 11 )
+direction = Vector3( 0, 1, 0 )
+spread = 32.68
+initial_velocity = 3.24
+scale_amount = 0.13
+scale_amount_random = 0.1
+scale_amount_curve = SubResource( 12 )
+script = ExtResource( 6 )
+delete_on_end = false
+
+[node name="die_particle" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.687535, -5.45552 )
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.6
+mesh = SubResource( 9 )
+emission_shape = 1
+emission_sphere_radius = 1.02
+direction = Vector3( 0, 1, 0 )
+spread = 18.1
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.92
+damping = 0.8
+scale_amount = 0.38
+scale_amount_random = 0.4
+scale_amount_curve = SubResource( 10 )
+script = ExtResource( 6 )
+delete_on_end = false
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.5, 11.5 )
+walk_speed = 7.0
+walk_acceleration = 1.3
+gravity_step = 0.3
+jump_str = 8.0
+cam_limit = Vector2( -1.4, 1.4 )
+cam_walk_shake = true
+cam_walk_shake_dir = Vector3( 0.04, 0, 0.02 )
+cam_walk_shake_str = 0.4
+cam_walk_shake_speed = 1.4
+cam_jump_str = 0.0
+dash_strength = 8.0
+dash_reload = 0.6
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41.5, 0 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.06168, 0 )
+invert_faces = true
+width = 31.9709
+height = 14.4014
+depth = 28.7454
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 0.808463, 0, -0.588547, 0, 1, 0, 0.588547, 0, 0.808463, 0.123559, 1.43547, 5.5903 )
+operation = 2
+invert_faces = true
+width = 2.84594
+height = 5.00956
+depth = 2.44138
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.886987, 0.461795, 0, -0.461795, 0.886987, 0, 1.2969, 0 )
+visible = false
+light_energy = 0.05
+shadow_enabled = true
+
+[node name="GUI" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 17 )
+
+[node name="control" type="Control" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="song_titles" type="Control" parent="GUI/control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -118.0
+margin_right = 255.0
+margin_bottom = 17.0
+
+[node name="show_credits" type="AnimationPlayer" parent="GUI/control/song_titles"]
+anims/RESET = SubResource( 1 )
+anims/show_autor = SubResource( 2 )
+
+[node name="credits" type="VBoxContainer" parent="GUI/control/song_titles"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -1083.0
+margin_top = 170.0
+margin_right = -719.0
+margin_bottom = 282.0
+grow_horizontal = 0
+alignment = 1
+
+[node name="song" type="Label" parent="GUI/control/song_titles/credits"]
+margin_right = 364.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 3 )
+text = "Jeskaya muzika"
+
+[node name="author" type="Label" parent="GUI/control/song_titles/credits"]
+margin_top = 66.0
+margin_right = 364.0
+margin_bottom = 112.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 4 )
+text = "kakoyto chel"
+
+[node name="ammos" type="Control" parent="GUI/control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -433.0
+margin_top = -89.0
+
+[node name="Label" type="Label" parent="GUI/control/ammos"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.0
+margin_top = -31.0
+margin_right = 65.0
+margin_bottom = 31.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 3 )
+align = 1
+
+[node name="room" type="Label" parent="GUI/control"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+text = "room: 1"
+
+[node name="time" type="Label" parent="GUI/control"]
+margin_top = 45.0
+margin_right = 133.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 4 )
+text = "time: "
+
+[node name="hp" type="ProgressBar" parent="GUI/control"]
+margin_left = 12.0
+margin_top = 657.0
+margin_right = 344.0
+margin_bottom = 703.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/fg = SubResource( 30 )
+custom_styles/bg = SubResource( 31 )
+value = 100.0
+
+[node name="pointer" type="ColorRect" parent="GUI/control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+rect_rotation = 45.0
+
+[node name="vignette" type="ColorRect" parent="GUI/control"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 29 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="death_msg" type="Control" parent="GUI"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="GUI/death_msg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.239216, 0.313726, 0.32549, 1 )
+
+[node name="one_hp" type="ColorRect" parent="GUI/death_msg"]
+visible = false
+material = SubResource( 69 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="GUI/death_msg/one_hp"]
+modulate = Color( 0.870588, 0.427451, 0.427451, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -143.0
+margin_top = 27.0
+margin_right = 143.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 3 )
+text = "One HP mode"
+
+[node name="Label" type="Label" parent="GUI/death_msg"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -216.0
+margin_right = 91.0
+margin_bottom = -154.0
+grow_horizontal = 2
+rect_scale = Vector2( 4.64457, 4.64457 )
+rect_pivot_offset = Vector2( 91, 31 )
+custom_fonts/font = ExtResource( 3 )
+text = "Ты Умер"
+
+[node name="Label2" type="Label" parent="GUI/death_msg"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -490.0
+margin_top = -110.0
+margin_right = -100.0
+margin_bottom = -48.0
+grow_horizontal = 2
+rect_scale = Vector2( 4.6, 4.6 )
+rect_pivot_offset = Vector2( 195, 31 )
+custom_fonts/font = ExtResource( 3 )
+text = "Прожитое Время:"
+
+[node name="Label" type="Label" parent="GUI/death_msg/Label2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 780.0
+margin_top = -31.0
+margin_right = 910.0
+margin_bottom = 31.0
+rect_rotation = 25.7417
+custom_fonts/font = ExtResource( 3 )
+
+[node name="Label3" type="Label" parent="GUI/death_msg"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -503.0
+margin_top = -29.0
+margin_right = -87.0
+margin_bottom = 98.0
+grow_horizontal = 2
+rect_scale = Vector2( 4.6, 4.6 )
+rect_pivot_offset = Vector2( 312, 63 )
+custom_fonts/font = ExtResource( 3 )
+text = "Кол-во зачищеных комнат:"
+
+[node name="Label" type="Label" parent="GUI/death_msg/Label3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 664.0
+margin_top = -64.5
+margin_right = 794.0
+margin_bottom = -2.4999
+rect_rotation = 21.7729
+custom_fonts/font = ExtResource( 3 )
+text = "64"
+
+[node name="anim" type="AnimationPlayer" parent="GUI/death_msg"]
+anims/RESET = SubResource( 46 )
+anims/death_msg = SubResource( 45 )
+
+[node name="leave" type="Button" parent="GUI/death_msg"]
+margin_left = 97.0
+margin_top = 775.0
+margin_right = 299.0
+margin_bottom = 857.0
+rect_rotation = 22.2272
+theme = ExtResource( 16 )
+custom_fonts/font = ExtResource( 3 )
+text = "Ливнуть"
+
+[node name="again" type="Button" parent="GUI/death_msg"]
+margin_left = 789.0
+margin_top = 808.0
+margin_right = 1225.0
+margin_bottom = 890.0
+rect_rotation = 27.6741
+theme = ExtResource( 16 )
+custom_fonts/font = ExtResource( 3 )
+text = "Ну давай ещё раз"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="stuff" type="Spatial" parent="."]
+
+[node name="box" parent="stuff" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.5, 27.5, -7 )
+
+[node name="bullet" parent="stuff" instance=ExtResource( 13 )]
+
+[node name="room_final" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 121, 73 )
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="CSGBox" type="CSGBox" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+invert_faces = true
+width = 15.0
+height = 7.0
+depth = 25.0
+
+[node name="CSGTorus" type="CSGTorus" parent="room_final/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -6 )
+invert_faces = true
+inner_radius = 4.5
+outer_radius = 14.5
+smooth_faces = false
+
+[node name="CSGBox2" type="CSGBox" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 12 )
+invert_faces = true
+width = 3.0
+height = 4.0
+depth = 6.0
+
+[node name="CSGMesh" type="CSGMesh" parent="room_final"]
+transform = Transform( 1, -2.62268e-07, 8.74228e-08, 8.74227e-08, -4.37114e-08, -1, 2.62268e-07, 1, -4.37114e-08, 0, -1.00001, 15 )
+operation = 2
+mesh = SubResource( 87 )
+
+[node name="connect_out" type="Position3D" parent="room_final"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, -1, -7.5 )
+
+[node name="connect_in" type="Position3D" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="request_delete_room" type="Area" parent="room_final"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, -7.5 )
+
+[node name="door_out" type="StaticBody" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="room_final/door_out"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="room_final/door_out"]
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="room_final"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="room_final/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="room_final/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="room_final"]
+
+[node name="pos" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="room_final/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="enemies" type="Spatial" parent="room_final"]
+
+[node name="doors" type="AnimationPlayer" parent="room_final"]
+anims/RESET = SubResource( 88 )
+anims/doors_down = SubResource( 89 )
+anims/next_door = SubResource( 90 )
+
+[node name="decor" type="Spatial" parent="room_final"]
+
+[node name="particles" type="CPUParticles" parent="room_final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -6 )
+amount = 128
+lifetime = 1.75
+speed_scale = 0.34
+mesh = SubResource( 91 )
+emission_shape = 5
+emission_ring_radius = 4.93
+emission_ring_inner_radius = 4.08
+emission_ring_height = 0.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+direction = Vector3( 0, 1, 0 )
+spread = 5.97
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 6.79
+angular_velocity = 720.0
+radial_accel_curve = SubResource( 93 )
+scale_amount_curve = SubResource( 92 )
+
+[node name="final" type="Area" parent="room_final"]
+
+[node name="CollisionShape" type="CollisionShape" parent="room_final/final"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -6 )
+shape = SubResource( 94 )
+
+[node name="all_rooms" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 124, 73 )
+
+[node name="room_base" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.5, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 28 )
+skeleton = NodePath("../../..")
+material/0 = ExtResource( 12 )
+material/1 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base/mesh/StaticBody"]
+shape = SubResource( 76 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, -1, -7.5 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, -7.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base/door_out"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base/door_out"]
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base"]
+anims/RESET = SubResource( 17 )
+anims/doors_down = SubResource( 18 )
+anims/next_door = SubResource( 21 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base"]
+
+[node name="room_base2" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -26, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base2"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 26 )
+material/0 = ExtResource( 12 )
+material/1 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base2/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base2/mesh/StaticBody"]
+shape = SubResource( 77 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base2"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30.5, -1, -15 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base2/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24.5, 0, -15 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base2/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base2/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 0, -7.5 )
+shape = SubResource( 16 )
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base2/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 0, -7.5 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base2/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base2/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base2"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -0.5, -15.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -13 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base2/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, -0.5, -17.5 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base2"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base2"]
+anims/RESET = SubResource( 40 )
+anims/doors_down = SubResource( 41 )
+anims/next_door = SubResource( 42 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base2"]
+
+[node name="room_base3" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.5, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base3"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 24 )
+material/0 = ExtResource( 12 )
+material/1 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base3/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base3/mesh/StaticBody"]
+shape = SubResource( 78 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base3"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, -7.5, -32.5 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base3/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base3"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -0.5, -7, -27.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base3/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base3/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, -6.5, -22 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base3/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, -6.5, -22 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base3"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base3/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base3/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base3"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, -11.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, -18.5 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -6.5, -15.5 )
+
+[node name="pos8" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -6.5, -15.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 2 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -3.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base3/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -1 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base3"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base3"]
+anims/RESET = SubResource( 48 )
+anims/doors_down = SubResource( 49 )
+anims/next_door = SubResource( 50 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base3"]
+
+[node name="room_base4" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -62.5, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base4"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 25 )
+material/0 = ExtResource( 12 )
+material/1 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base4/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base4/mesh/StaticBody"]
+shape = SubResource( 79 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.5, -1, -17 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base4/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base4"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5, 0, -17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base4/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base4/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -9.5 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base4/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -9.5 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base4"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base4/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base4/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base4"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -0.5, -11.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.5, -19 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base4/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, -0.5, -14 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base4"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base4"]
+anims/RESET = SubResource( 51 )
+anims/doors_down = SubResource( 52 )
+anims/next_door = SubResource( 53 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base4"]
+
+[node name="room_base5" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base5"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 27 )
+material/0 = ExtResource( 12 )
+material/1 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base5/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base5/mesh/StaticBody"]
+shape = SubResource( 80 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base5"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -6.5, -1, -23.5 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base5/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base5"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 0, -18.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base5/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base5/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -13 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base5/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -13 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base5"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base5/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base5/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base5"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 6, -8 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6, -0.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -2 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -9.5 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -4 )
+
+[node name="pos8" type="Position3D" parent="all_rooms/room_base5/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.5, -15 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base5"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base5"]
+anims/RESET = SubResource( 54 )
+anims/doors_down = SubResource( 55 )
+anims/next_door = SubResource( 56 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base5"]
+
+[node name="room_base6" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base6"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 21 )
+material/0 = ExtResource( 12 )
+material/1 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base6/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base6/mesh/StaticBody"]
+shape = SubResource( 81 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base6"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, -1, -24 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base6/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base6"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, -20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base6/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base6/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, 0, -14 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base6/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, 0, -14 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base6"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base6/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base6/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base6"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -0.5, 8 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, -0.5, 2 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 4 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, -0.5, -6.5 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base6/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, -0.5, -18 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base6"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base6"]
+anims/RESET = SubResource( 57 )
+anims/doors_down = SubResource( 58 )
+anims/next_door = SubResource( 59 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base6"]
+
+[node name="room_base7" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base7"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 20 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base7/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base7/mesh/StaticBody"]
+shape = SubResource( 82 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base7"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.5, -1, 9.5 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base7/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base7"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.5, 0, 9.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base7/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base7/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0, 17 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base7/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0, 17 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base7"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base7/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base7/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base7"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base7/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, -0.5, 0.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base7/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, -0.5, 6.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base7/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, -0.5, 8.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base7/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, -0.5, 4.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base7/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, -0.5, 4.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base7/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -0.5, 1.5 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base7"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base7"]
+anims/RESET = SubResource( 60 )
+anims/doors_down = SubResource( 61 )
+anims/next_door = SubResource( 62 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base7"]
+
+[node name="room_base8" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40.5, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base8"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base8/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base8/mesh/StaticBody"]
+shape = SubResource( 83 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base8"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, -1, -38 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base8/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base8"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, -34 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base8/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base8/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, 0, -28 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base8/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, 0, -28 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base8"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base8/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base8/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base8"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -0.5, -27.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.5, -29 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.5, -22 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -0.5, -17.5 )
+
+[node name="pos8" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.5, -10 )
+
+[node name="pos9" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -0.5, -7.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base8/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, -0.5, -5 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base8"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base8"]
+anims/RESET = SubResource( 63 )
+anims/doors_down = SubResource( 64 )
+anims/next_door = SubResource( 65 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base8"]
+
+[node name="room_base9" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base9"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 18 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base9/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base9/mesh/StaticBody"]
+shape = SubResource( 84 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base9"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.5, -1, 8.5 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base9/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base9"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.5, 0, 8.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base9/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base9/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 16 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base9/door_out"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 16 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base9"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base9/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base9/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base9"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base9/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, -0.5, -2.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base9/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -0.5, 0.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base9/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, -0.5, 7.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base9/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base9/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base9/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.5, -5 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base9"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base9"]
+anims/RESET = SubResource( 66 )
+anims/doors_down = SubResource( 67 )
+anims/next_door = SubResource( 68 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base9"]
+
+[node name="room_base10" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base10"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 19 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base10/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base10/mesh/StaticBody"]
+shape = SubResource( 85 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base10"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.5, -1, -40 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base10/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base10"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.5, 0, -36 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base10/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base10/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -30 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base10/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -30 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base10"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base10/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base10/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base10"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.5, -6.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -13.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -6 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -22.5 )
+
+[node name="pos8" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.5, -31 )
+
+[node name="pos9" type="Position3D" parent="all_rooms/room_base10/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -31 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base10"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base10"]
+anims/RESET = SubResource( 70 )
+anims/doors_down = SubResource( 71 )
+anims/next_door = SubResource( 72 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base10"]
+
+[node name="room_base11" type="CSGCombiner" parent="all_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 75, 0 )
+visible = false
+material_override = ExtResource( 12 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 4
+
+[node name="mesh" type="MeshInstance" parent="all_rooms/room_base11"]
+material_override = ExtResource( 12 )
+mesh = ExtResource( 22 )
+
+[node name="StaticBody" type="StaticBody" parent="all_rooms/room_base11/mesh"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base11/mesh/StaticBody"]
+shape = SubResource( 86 )
+disabled = true
+
+[node name="connect_out" type="Position3D" parent="all_rooms/room_base11"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 33, -1, -58 )
+
+[node name="connect_in" type="Position3D" parent="all_rooms/room_base11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="all_rooms/room_base11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base11/request_new_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 11.5 )
+shape = SubResource( 14 )
+
+[node name="request_delete_room" type="Area" parent="all_rooms/room_base11"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 33, 0, -54 )
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base11/request_delete_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 14 )
+
+[node name="door_out" type="StaticBody" parent="all_rooms/room_base11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -7.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base11/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.5, 0, -48 )
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base11/door_out"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.5, 0, -48 )
+shape = SubResource( 16 )
+
+[node name="door_in" type="StaticBody" parent="all_rooms/room_base11"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 13.5 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="MeshInstance" type="MeshInstance" parent="all_rooms/room_base11/door_in"]
+material_override = ExtResource( 15 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="all_rooms/room_base11/door_in"]
+shape = SubResource( 16 )
+
+[node name="spawner_enemies" type="Spatial" parent="all_rooms/room_base11"]
+
+[node name="pos" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -20.5 )
+
+[node name="pos5" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, -0.5, -20.5 )
+
+[node name="pos6" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.5, -20.5 )
+
+[node name="pos7" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -0.5, -26.5 )
+
+[node name="pos8" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -0.5, -40.5 )
+
+[node name="pos9" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -0.5, -49.5 )
+
+[node name="pos2" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="all_rooms/room_base11/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="enemies" type="Spatial" parent="all_rooms/room_base11"]
+
+[node name="doors" type="AnimationPlayer" parent="all_rooms/room_base11"]
+anims/RESET = SubResource( 73 )
+anims/doors_down = SubResource( 74 )
+anims/next_door = SubResource( 75 )
+
+[node name="decor" type="Spatial" parent="all_rooms/room_base11"]
+
+[node name="playable_rooms" type="Spatial" parent="."]
+
+[node name="1" type="CSGCombiner" parent="playable_rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.5, 0 )
+material_override = ExtResource( 12 )
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 7 )
+count_enemies = 0
+
+[node name="CSGBox" type="CSGBox" parent="playable_rooms/1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+invert_faces = true
+width = 15.0
+height = 7.0
+depth = 25.0
+
+[node name="CSGBox2" type="CSGBox" parent="playable_rooms/1"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1, -13 )
+invert_faces = true
+width = 5.0
+height = 4.0
+depth = 3.0
+
+[node name="CSGMesh" type="CSGMesh" parent="playable_rooms/1"]
+transform = Transform( 1, 1.06581e-14, 4.02341e-21, 0, -4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -0.5, -1, -15.5 )
+operation = 2
+mesh = SubResource( 13 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="playable_rooms/1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 15 )
+operation = 2
+mesh = SubResource( 13 )
+
+[node name="connect_out" type="Position3D" parent="playable_rooms/1"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, -1, -15.5 )
+
+[node name="connect_in" type="Position3D" parent="playable_rooms/1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 15 )
+
+[node name="request_new_room" type="Area" parent="playable_rooms/1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+
+[node name="request_delete_room" type="Area" parent="playable_rooms/1"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, -7.5 )
+
+[node name="spawner_enemies" type="Spatial" parent="playable_rooms/1"]
+
+[node name="pos" type="Position3D" parent="playable_rooms/1/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10.5 )
+
+[node name="pos2" type="Position3D" parent="playable_rooms/1/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, -4.5 )
+
+[node name="pos3" type="Position3D" parent="playable_rooms/1/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -2.5 )
+
+[node name="pos4" type="Position3D" parent="playable_rooms/1/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, -6.5 )
+
+[node name="pos5" type="Position3D" parent="playable_rooms/1/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.5, -0.5 )
+
+[node name="pos6" type="Position3D" parent="playable_rooms/1/spawner_enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -0.5, 1 )
+
+[node name="enemies" type="Spatial" parent="playable_rooms/1"]
+
+[node name="doors" type="AnimationPlayer" parent="playable_rooms/1"]
+anims/RESET = SubResource( 19 )
+anims/doors_down = SubResource( 20 )
+anims/next_door = SubResource( 22 )
+
+[node name="Label3D" type="Label3D" parent="playable_rooms/1"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.45, 0, -7 )
+pixel_size = 0.018
+text = "Лови Аптечку(патроны)"
+font = SubResource( 47 )
+
+[node name="Label3D5" type="Label3D" parent="playable_rooms/1"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.45, 2.5, 7 )
+pixel_size = 0.018
+text = "Манекен
+(В него вроде как можно
+ даже пострелять)"
+font = SubResource( 47 )
+
+[node name="Label3D3" type="Label3D" parent="playable_rooms/1"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.45, 1, 5.5 )
+pixel_size = 0.018
+text = "Управление:
+-WASD - ходить (и так далее)
+-Shift - рывок
+-P(англ.) - настройки
+-Ctrl + R - мгновенно умереть"
+font = SubResource( 47 )
+
+[node name="Label3D4" type="Label3D" parent="playable_rooms/1"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.45, 0.5, -6.5 )
+pixel_size = 0.018
+text = "1/2/3 (колёсико мыши)- 
+выбор оружия
+Esc - Выйти из игры"
+font = SubResource( 47 )
+
+[node name="Label3D2" type="Label3D" parent="playable_rooms/1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500002, 2.5, -12.45 )
+pixel_size = 0.018
+text = "Удачи!"
+font = SubResource( 47 )
+
+[node name="grounded_enemy" parent="playable_rooms/1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1.4, 7 )
+max_hp = 100000000
+damage = 0
+period_attack = 0.0
+period_attack_spread = 0.0
+speed = 0.0
+acceleration = 0.0
+chance_to_drop_box = 0.0
+disabled = true
+
+[node name="all_enemies" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0 )
+
+[node name="grounded_enemy" parent="all_enemies" instance=ExtResource( 5 )]
+name_enemy = "GroundEnemy"
+max_hp = 80
+damage = 12
+disabled = true
+
+[node name="wheel_of_death" parent="all_enemies" instance=ExtResource( 8 )]
+max_hp = 35
+damage = 8
+speed = 14.0
+
+[node name="fly" parent="all_enemies" instance=ExtResource( 11 )]
+damage = 8
+
+[node name="walls" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 43, 0 )
+material_override = ExtResource( 12 )
+mesh = SubResource( 44 )
+
+[connection signal="pressed" from="GUI/death_msg/leave" to="GUI" method="leave"]
+[connection signal="pressed" from="GUI/death_msg/again" to="GUI" method="again"]

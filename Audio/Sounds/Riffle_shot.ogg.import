@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Riffle_shot.ogg-57f0759c5e71ea13058f28afac21fd41.oggstr"
+
+[deps]
+
+source_file="res://Audio/Sounds/Riffle_shot.ogg"
+dest_files=[ "res://.import/Riffle_shot.ogg-57f0759c5e71ea13058f28afac21fd41.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

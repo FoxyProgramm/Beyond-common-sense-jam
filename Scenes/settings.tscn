@@ -1,0 +1,200 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/def_font.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.45098, 0.0509804, 0.0509804, 0.603922 )
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color( 0.0941176, 0.00392157, 0.00392157, 0.439216 )
+border_blend = true
+
+[node name="settings" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -236.5
+margin_top = -182.5
+margin_right = 236.5
+margin_bottom = 182.5
+custom_styles/panel = SubResource( 38 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -199.5
+margin_top = -148.0
+margin_right = 199.5
+margin_bottom = 148.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+margin_right = 399.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 1 )
+text = "Sensitive"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/Label"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -221.0
+margin_top = -4.0
+margin_right = -58.0
+margin_bottom = 12.0
+min_value = 0.1
+max_value = 2.4
+step = 0.1
+value = 0.7
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Label"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -23.0
+margin_bottom = 23.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "0.7"
+
+[node name="Label6" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 50.0
+margin_right = 399.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 1 )
+text = "ScreenShake"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/Label6"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = -4.0
+margin_right = -57.0
+margin_bottom = 12.0
+max_value = 1.0
+step = 0.1
+value = 0.4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Label6"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -23.0
+margin_bottom = 23.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "0.4"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 100.0
+margin_right = 399.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 1 )
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/Label2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -274.0
+margin_top = -4.0
+margin_right = -89.0
+margin_bottom = 12.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Label2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -23.0
+margin_bottom = 23.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 150.0
+margin_right = 399.0
+margin_bottom = 196.0
+custom_fonts/font = ExtResource( 1 )
+text = "Sounds"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/Label3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -271.0
+margin_top = -4.0
+margin_right = -87.0
+margin_bottom = 12.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Label3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -23.0
+margin_bottom = 23.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+
+[node name="Label4" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 200.0
+margin_right = 399.0
+margin_bottom = 246.0
+custom_fonts/font = ExtResource( 1 )
+text = "FullScreen"
+
+[node name="CheckButton" type="CheckButton" parent="Panel/VBoxContainer/Label4"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -209.5
+margin_top = -17.0
+margin_right = -133.5
+margin_bottom = 23.0
+
+[node name="Label5" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 250.0
+margin_right = 399.0
+margin_bottom = 296.0
+custom_fonts/font = ExtResource( 1 )
+text = "VSync"
+
+[node name="CheckButton" type="CheckButton" parent="Panel/VBoxContainer/Label5"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -209.5
+margin_top = -17.0
+margin_right = -133.5
+margin_bottom = 23.0

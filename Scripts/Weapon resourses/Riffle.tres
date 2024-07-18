@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Classes/weapon_class.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name_weapon = "Riffle"
+damage = 6
+damage_spread = 2
+reload_time = 0.0
+shoot_period = 0.1
+endless_ammo = false
+ammo = 110
+max_ammo = 220
+get_ammo_per_box = 30

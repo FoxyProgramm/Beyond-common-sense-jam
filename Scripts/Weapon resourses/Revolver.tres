@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Classes/weapon_class.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name_weapon = "Revolver"
+damage = 9
+damage_spread = 2
+reload_time = 0.0
+shoot_period = 0.5
+endless_ammo = true
+ammo = 0
+max_ammo = 0
+get_ammo_per_box = 0

@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Classes/billboard_class.gd" type="Script" id=1]
+[ext_resource path="res://fonts/def_font.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.1, 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label3D:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.366271, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label3D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.01, -0.01, -0.01 ), Vector3( -1, -1, -1 ), Vector3( -0.01, -0.01, -0.01 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label3D:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.366271, 0, 0 ), Vector3( 0.366271, 1.25546, 0 ) ]
+}
+
+[node name="Billboard" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17951, 2.31419, -4.57732 )
+script = ExtResource( 1 )
+target_path = NodePath("../player")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform( -0.01, 0, 0, 0, 0.01, -1.50996e-09, 0, 1.50996e-09, 0.01, 0.366271, 0, 0 )
+pixel_size = 0.03
+text = "10"
+font = ExtResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/fade = SubResource( 2 )

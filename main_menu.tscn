@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/def_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://def_button.tres" type="Theme" id=2]
+[ext_resource path="res://Scripts/main_menu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 1 )
+PopupDialog/styles/panel = SubResource( 1 )
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.239216, 0.313726, 0.32549, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -81, 15 )
+color = Color( 0.0941176, 0.184314, 0.2, 1 )
+polygon = PoolVector2Array( 327, -89, -92, 256, -56, 412, 102, 307, 231, 142, 453, 100, 531, -38, 429, -136 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( -81, 15 )
+color = Color( 0.0941176, 0.184314, 0.2, 1 )
+polygon = PoolVector2Array( 1407, 229, 1271, 252, 1251, 413, 1175, 473, 1089, 561, 1029, 677, 956, 753, 1248, 715, 1319, 617, 1334, 516, 1374, 388 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -219.0
+margin_top = -243.0
+margin_right = 219.0
+margin_bottom = 243.0
+
+[node name="start" type="Button" parent="VBoxContainer"]
+margin_right = 438.0
+margin_bottom = 66.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начать страдания"
+
+[node name="start2" type="Button" parent="VBoxContainer"]
+margin_top = 70.0
+margin_right = 438.0
+margin_bottom = 136.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начать страдания"
+
+[node name="start3" type="Button" parent="VBoxContainer"]
+margin_top = 140.0
+margin_right = 438.0
+margin_bottom = 206.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начать страдания"
+
+[node name="start4" type="Button" parent="VBoxContainer"]
+margin_top = 210.0
+margin_right = 438.0
+margin_bottom = 276.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начать страдания"
+
+[node name="start5" type="Button" parent="VBoxContainer"]
+margin_top = 280.0
+margin_right = 438.0
+margin_bottom = 346.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начать страдания"
+
+[node name="start6" type="Button" parent="VBoxContainer"]
+margin_top = 350.0
+margin_right = 438.0
+margin_bottom = 416.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начать страдания"
+
+[node name="leave" type="Button" parent="VBoxContainer"]
+margin_top = 420.0
+margin_right = 438.0
+margin_bottom = 486.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Ливнуть пока не поздно"
+
+[node name="err" type="ConfirmationDialog" parent="."]
+margin_right = 611.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 150, 52.5 )
+theme = SubResource( 2 )
+popup_exclusive = true
+window_title = "АШЫБКА"
+dialog_text = "Не не не не, так не пойдёт
+давай как все
+"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 642.0
+margin_right = 621.0
+margin_bottom = 688.0
+custom_fonts/font = ExtResource( 1 )
+text = "Включить режим полного страдания"
+
+[node name="CheckButton" type="CheckButton" parent="Label"]
+margin_left = 599.0
+margin_top = -29.0
+margin_right = 675.0
+margin_bottom = 25.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/start2" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/start3" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/start4" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/start5" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/start6" to="." method="start"]
+[connection signal="pressed" from="VBoxContainer/leave" to="." method="leave"]
+[connection signal="toggled" from="Label/CheckButton" to="." method="suffering"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/get_ammo.mp3-52a02bfcd95d0104f41a700609ce5009.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds/get_ammo.mp3"
+dest_files=[ "res://.import/get_ammo.mp3-52a02bfcd95d0104f41a700609ce5009.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
